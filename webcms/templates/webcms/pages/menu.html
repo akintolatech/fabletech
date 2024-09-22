@@ -1,0 +1,421 @@
+{% extends "webcms/base.html" %}
+{% load static %}
+
+{% block title %}Buka-Menu{% endblock %}
+
+
+{% block landing %}
+    <div class="landing">
+        <!-- <video src="media/vid.mp4"
+               autoplay="true">
+        </video> -->
+
+        <div class="text">
+            <h1>Shop</h1>
+            <p>
+                Find and make quote<br/>
+                for our quality and bespoke products
+            </p>
+            <button>Send a Message</button>
+        </div>
+
+    </div>
+{% endblock %}
+
+{% block content %}
+    <!-- section -->
+    <div class="section">
+        <h1>As e dey Hot</h1>
+
+        <div class="shop-container">
+
+            <div class="aside-container">
+
+                <div class="search-box">
+                    <input type="search" placeholder="What would you like to eat" />
+                    <div class="icn-box">
+                        <img src="../img/search-icon.svg" />
+                    </div>
+                </div>
+
+                <h4>Categories</h4>
+
+                <div class="user-profile">
+
+                    <!-- wallet -->
+                    <div class="user-func">
+                        <div class="icon-and-text">
+                            <div class="func-icon"><img src="../img/awuf-03.svg"></div>
+                            <h4>Small Chops</h4>
+                        </div>
+                        <h4>(3)</h4>
+                    </div>
+
+                    <div class="user-func">
+                        <div class="icon-and-text">
+                            <div class="func-icon"><img src="../img/awuf-03.svg"></div>
+                            <h4>Small Chops</h4>
+                        </div>
+                        <h4>(3)</h4>
+                    </div>
+
+                    <div class="user-func">
+                        <div class="icon-and-text">
+                            <div class="func-icon"><img src="../img/awuf-03.svg"></div>
+                            <h4>Small Chops</h4>
+                        </div>
+                        <h4>(3)</h4>
+                    </div>
+
+                    <div class="user-func">
+                        <div class="icon-and-text">
+                            <div class="func-icon"><img src="../img/awuf-03.svg"></div>
+                            <h4>Small Chops</h4>
+                        </div>
+                        <h4>(3)</h4>
+                    </div>
+
+                </div>
+
+                <div class="related-products-container">
+                    <h4>Best Deals</h4>
+
+                    <div class="user-func">
+                        <div class="icon-and-text">
+                            <div class="func-icon"><img src="../img/burger.png"></div>
+                            <h4>Small Chops</h4>
+                        </div>
+                        <h4>(3)</h4>
+                    </div>
+
+                    <div class="foodtab">
+
+                        <div class="foodimg">
+                            <img src="../img/shawarma.png"/>
+                        </div>
+                        <div class="foodtext">
+                            <h4>Chicken Sharwarma</h4>
+                            <!-- <p>With 2 sausages, onions and garlic</p> -->
+                            <p>$300</p>
+                        </div>
+
+                    </div>
+                    <div class="foodtab">
+
+                        <div class="foodimg">
+                            <img src="../img/shawarma.png"/>
+                        </div>
+                        <div class="foodtext">
+                            <h4>Chicken Sharwarma</h4>
+                            <!-- <p>With 2 sausages, onions and garlic</p> -->
+                            <p>$300</p>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="container-of-containers">
+
+                <div class="container">
+
+                    <!-- food box -->
+                    <div class="menu-food-box">
+
+                        <div class="menu-food-image">
+                            <img src="../img/burgerimg.png"/>
+                        </div>
+
+                        <!-- food meta -->
+                        <div class="menu-food-meta">
+
+                            <div class="menu-name-price">
+                                <p>Beef Burger</p>
+                                <h4>2000</h4>
+                            </div>
+
+                            <div class="menu-spoon">
+                                <div class="menu-spoon-box-plus" onclick="decrement()" >
+                                    <img src="../img/minusicon.svg" alt="">
+                                </div>
+                                <div class="menu-spoon-box-qty">
+                                        <h6 class="qty">1</h6>
+                                        <!--count goes here--  -->
+                                </div>
+                                <div class="menu-spoon-box-minus" onclick="increment()">
+                                    <img src="../img/plusicon.svg" alt="">
+                                </div>
+                            </div>
+
+                            <button>Order</button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- food box -->
+                    <div class="menu-food-box">
+                        <div class="menu-food-image">
+                        <img src="../img/cake.png"/>
+                        </div>
+                        <!-- food meta -->
+                        <div class="menu-food-meta">
+                        <div class="menu-name-price">
+                            <!-- food name -->
+                            <p>Cakes</p>
+                            <!-- food price -->
+                            <h4>2000</h4>
+                        </div>
+                        <div class="menu-spoon">
+                            <div class="menu-spoon-box-plus" onclick="decrement()" >
+                                <img src="img/minusicon.svg" alt="">
+                            </div>
+                            <div class="menu-spoon-box-qty">
+                                    <h6 class="qty">1</h6>
+                                    <!--count goes here--  -->
+                            </div>
+                            <div class="menu-spoon-box-minus" onclick="increment()">
+                                <img src="img/plusicon.svg" alt="">
+                            </div>
+                        </div>
+                        <button>Order</button>
+                        </div>
+                    </div>
+
+                    <!-- food box -->
+                    <div class="menu-food-box">
+                        <div class="menu-food-image">
+                        <img src="../img/shawarma.png"/>
+                        </div>
+                        <!-- food meta -->
+                        <div class="menu-food-meta">
+                        <div class="menu-name-price">
+                            <!-- food name -->
+                            <p>Sharwarma</p>
+                            <!-- food price -->
+                            <h4>2000</h4>
+                        </div>
+
+                        <div class="menu-spoon">
+                            <div class="menu-spoon-box-plus" onclick="decrement()" >
+                                <img src="../img/minusicon.svg" alt="">
+                            </div>
+                            <div class="menu-spoon-box-qty">
+                                    <h6 class="qty">1</h6>
+                                    <!--count goes here--  -->
+                            </div>
+                            <div class="menu-spoon-box-minus" onclick="increment()">
+                                <img src="../img/plusicon.svg" alt="">
+                            </div>
+                        </div>
+                        <button>Order</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="container">
+
+                    <!-- food box -->
+                    <div class="menu-food-box">
+
+                        <div class="menu-food-image">
+                            <img src="../img/burgerimg.png"/>
+                        </div>
+
+                        <!-- food meta -->
+                        <div class="menu-food-meta">
+
+                            <div class="menu-name-price">
+                                <p>Beef Burger</p>
+                                <h4>2000</h4>
+                            </div>
+
+                            <div class="menu-spoon">
+                                <div class="menu-spoon-box-plus" onclick="decrement()" >
+                                    <img src="../img/minusicon.svg" alt="">
+                                </div>
+                                <div class="menu-spoon-box-qty">
+                                        <h6 class="qty">1</h6>
+                                        <!--count goes here--  -->
+                                </div>
+                                <div class="menu-spoon-box-minus" onclick="increment()">
+                                    <img src="../img/plusicon.svg" alt="">
+                                </div>
+                            </div>
+
+                            <button>Order</button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- food box -->
+                    <div class="menu-food-box">
+                        <div class="menu-food-image">
+                        <img src="../img/cake.png"/>
+                        </div>
+                        <!-- food meta -->
+                        <div class="menu-food-meta">
+                        <div class="menu-name-price">
+                            <!-- food name -->
+                            <p>Cakes</p>
+                            <!-- food price -->
+                            <h4>2000</h4>
+                        </div>
+                        <div class="menu-spoon">
+                            <div class="menu-spoon-box-plus" onclick="decrement()" >
+                                <img src="img/minusicon.svg" alt="">
+                            </div>
+                            <div class="menu-spoon-box-qty">
+                                    <h6 class="qty">1</h6>
+                                    <!--count goes here--  -->
+                            </div>
+                            <div class="menu-spoon-box-minus" onclick="increment()">
+                                <img src="img/plusicon.svg" alt="">
+                            </div>
+                        </div>
+                        <button>Order</button>
+                        </div>
+                    </div>
+
+                    <!-- food box -->
+                    <div class="menu-food-box">
+                        <div class="menu-food-image">
+                        <img src="../img/shawarma.png"/>
+                        </div>
+                        <!-- food meta -->
+                        <div class="menu-food-meta">
+                        <div class="menu-name-price">
+                            <!-- food name -->
+                            <p>Sharwarma</p>
+                            <!-- food price -->
+                            <h4>2000</h4>
+                        </div>
+
+                        <div class="menu-spoon">
+                            <div class="menu-spoon-box-plus" onclick="decrement()" >
+                                <img src="../img/minusicon.svg" alt="">
+                            </div>
+                            <div class="menu-spoon-box-qty">
+                                    <h6 class="qty">1</h6>
+                                    <!--count goes here--  -->
+                            </div>
+                            <div class="menu-spoon-box-minus" onclick="increment()">
+                                <img src="../img/plusicon.svg" alt="">
+                            </div>
+                        </div>
+                        <button>Order</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="container">
+
+                    <!-- food box -->
+                    <div class="menu-food-box">
+
+                        <div class="menu-food-image">
+                            <img src="../img/burgerimg.png"/>
+                        </div>
+
+                        <!-- food meta -->
+                        <div class="menu-food-meta">
+
+                            <div class="menu-name-price">
+                                <p>Beef Burger</p>
+                                <h4>2000</h4>
+                            </div>
+
+                            <div class="menu-spoon">
+                                <div class="menu-spoon-box-plus" onclick="decrement()" >
+                                    <img src="../img/minusicon.svg" alt="">
+                                </div>
+                                <div class="menu-spoon-box-qty">
+                                        <h6 class="qty">1</h6>
+                                        <!--count goes here--  -->
+                                </div>
+                                <div class="menu-spoon-box-minus" onclick="increment()">
+                                    <img src="../img/plusicon.svg" alt="">
+                                </div>
+                            </div>
+
+                            <button>Order</button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- food box -->
+                    <div class="menu-food-box">
+                        <div class="menu-food-image">
+                        <img src="../img/cake.png"/>
+                        </div>
+                        <!-- food meta -->
+                        <div class="menu-food-meta">
+                        <div class="menu-name-price">
+                            <!-- food name -->
+                            <p>Cakes</p>
+                            <!-- food price -->
+                            <h4>2000</h4>
+                        </div>
+                        <div class="menu-spoon">
+                            <div class="menu-spoon-box-plus" onclick="decrement()" >
+                                <img src="img/minusicon.svg" alt="">
+                            </div>
+                            <div class="menu-spoon-box-qty">
+                                    <h6 class="qty">1</h6>
+                                    <!--count goes here--  -->
+                            </div>
+                            <div class="menu-spoon-box-minus" onclick="increment()">
+                                <img src="img/plusicon.svg" alt="">
+                            </div>
+                        </div>
+                        <button>Order</button>
+                        </div>
+                    </div>
+
+                    <!-- food box -->
+                    <div class="menu-food-box">
+                        <div class="menu-food-image">
+                        <img src="../img/shawarma.png"/>
+                        </div>
+                        <!-- food meta -->
+                        <div class="menu-food-meta">
+                        <div class="menu-name-price">
+                            <!-- food name -->
+                            <p>Sharwarma</p>
+                            <!-- food price -->
+                            <h4>2000</h4>
+                        </div>
+
+                        <div class="menu-spoon">
+                            <div class="menu-spoon-box-plus" onclick="decrement()" >
+                                <img src="../img/minusicon.svg" alt="">
+                            </div>
+                            <div class="menu-spoon-box-qty">
+                                    <h6 class="qty">1</h6>
+                                    <!--count goes here--  -->
+                            </div>
+                            <div class="menu-spoon-box-minus" onclick="increment()">
+                                <img src="../img/plusicon.svg" alt="">
+                            </div>
+                        </div>
+                        <button>Order</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+{% endblock %}
+
+
+

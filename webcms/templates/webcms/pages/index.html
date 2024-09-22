@@ -1,0 +1,380 @@
+{% extends "webcms/base.html" %}
+{% load static %}
+
+{% block title %}Buka-Home{% endblock %}
+
+
+
+{% block landing %}
+    <!-- landing section -->
+    <div class="landing lnd-home">
+        <!-- <video src="media/vid.mp4"
+               autoplay="true">
+        </video> -->
+
+        <div class="text">
+            <h1>Delicious Food <br/> Delivered to Your Doorstep!</h1>
+            <p>
+                Craving something tasty? Order now and enjoy fresh, mouth-watering meals in minutes.
+            </p>
+            <button>Order Now!</button>
+        </div>
+
+    </div>
+{% endblock %}
+
+{% block content %}
+
+    <!-- Values Section -->
+    <div class="section">
+        <div class="values_container">
+
+            <div class="values_item">
+                <div class="value_imgbox">
+                    <img src="{% static 'img/fresh.png' %}" />
+                </div>
+                <div class="values_text">
+                    <h4>Freshly Made</h4>
+                    <p>Our Delights are made from only fresh produce.</p>
+                </div>
+            </div>
+
+            <div class="values_item">
+                <div class="value_imgbox">
+                    <img src="{% static 'img/delights.png' %}" />
+                </div>
+                <div class="values_text">
+                    <h4>Tasty Masterpieces</h4>
+                    <p>
+                        Carefully curated ingredients,
+                        with just a little more spice at the right place.
+                    </p>
+                </div>
+            </div>
+
+            <div class="values_item">
+                <div class="value_imgbox">
+                    <img src="{% static 'img/rida.png' %}" />
+                </div>
+                <div class="values_text">
+                    <h4>Fast Delivery</h4>
+                    <p>Everything you order will be quickly delivered to your door.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Hot picks section -->
+    <div class="section">
+        <h1>Hot Picks</h1>
+
+
+        <div class="container">
+
+            <div class="item project2">
+                <img src="img/burgercard.jpg" />
+                <div class="product-item-content">
+                    <h3>Burgers</h3>
+                    <p>Spicy and so beefy burger a call away</p>
+                    <button>Order</button>
+                </div>
+
+            </div>
+
+            <div class="item project2">
+                <img src="img/cake.jpg" />
+                <div class="product-item-content">
+                    <h3>Cakes</h3>
+                    <p>Spicy and so beefy burger a call away</p>
+                    <button>Order</button>
+                </div>
+
+            </div>
+
+            <div class="item project2">
+                <img src="img/sharwarma.jpg" />
+                <div class="product-item-content">
+                    <h3>Sharwarma</h3>
+                    <p>Spicy and so beefy burger a call away</p>
+                    <button>Order</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Narrative -->
+    <div class="narrative">
+
+        <div class="img-box">
+            <img src="{% static 'img/burgerimg.png' %}" />
+        </div>
+
+        <div class="text-box">
+            <h1>From Our Kitchen to Your Table</h1>
+            <p>
+               We started with a simple goal – to bring the best of local and international flavors to your doorstep.
+               Our team is passionate about creating meals that are not just tasty but also made with the finest ingredients.
+               friends and the military through its aid schemes.
+            </p>
+            <button>Read more</button>
+        </div>
+
+
+
+    </div>
+
+    <!-- Menus section -->
+    <div class="section">
+
+        <h1>Our Menu</h1>
+
+        <div class="container">
+
+            <!-- food box -->
+            <div class="menu-food-box">
+
+                <div class="menu-food-image">
+                    <img src="{% static 'img/burgerimg.png' %}"/>
+                </div>
+
+                <!-- food meta -->
+                <div class="menu-food-meta">
+
+                    <div class="menu-name-price">
+                        <p>Beef Burger</p>
+                        <h4>2000</h4>
+                    </div>
+
+                    <div class="menu-spoon">
+                        <div class="menu-spoon-box-plus" onclick="decrement()" >
+                            <img src="img/minusicon.svg" alt="">
+                        </div>
+                        <div class="menu-spoon-box-qty">
+                                <h6 class="qty">1</h6>
+                                <!--count goes here--  -->
+                        </div>
+                        <div class="menu-spoon-box-minus" onclick="increment()">
+                            <img src="img/plusicon.svg" alt="">
+                        </div>
+                    </div>
+
+                    <button>Order</button>
+
+                </div>
+
+            </div>
+
+            <!-- food box -->
+            <div class="menu-food-box">
+                <div class="menu-food-image">
+                <img src="img/cake.png"/>
+                </div>
+                <!-- food meta -->
+                <div class="menu-food-meta">
+                <div class="menu-name-price">
+                    <!-- food name -->
+                    <p>Cakes</p>
+                    <!-- food price -->
+                    <h4>2000</h4>
+                </div>
+                <div class="menu-spoon">
+                    <div class="menu-spoon-box-plus" onclick="decrement()" >
+                        <img src="img/minusicon.svg" alt="">
+                    </div>
+                    <div class="menu-spoon-box-qty">
+                            <h6 class="qty">1</h6>
+                            <!--count goes here--  -->
+                    </div>
+                    <div class="menu-spoon-box-minus" onclick="increment()">
+                        <img src="img/plusicon.svg" alt="">
+                    </div>
+                </div>
+                <button>Order</button>
+                </div>
+            </div>
+
+            <!-- food box -->
+            <div class="menu-food-box">
+                <div class="menu-food-image">
+                <img src="img/shawarma.png"/>
+                </div>
+                <!-- food meta -->
+                <div class="menu-food-meta">
+                <div class="menu-name-price">
+                    <!-- food name -->
+                    <p>Sharwarma</p>
+                    <!-- food price -->
+                    <h4>2000</h4>
+                </div>
+
+                <div class="menu-spoon">
+                    <div class="menu-spoon-box-plus" onclick="decrement()" >
+                        <img src="img/minusicon.svg" alt="">
+                    </div>
+                    <div class="menu-spoon-box-qty">
+                            <h6 class="qty">1</h6>
+                            <!--count goes here--  -->
+                    </div>
+                    <div class="menu-spoon-box-minus" onclick="increment()">
+                        <img src="img/plusicon.svg" alt="">
+                    </div>
+                </div>
+                <button>Order</button>
+                </div>
+            </div>
+
+            <!-- food box -->
+            <div class="menu-food-box">
+                <div class="menu-food-image">
+                <img src="img/shawarma.png"/>
+                </div>
+                <!-- food meta -->
+                <div class="menu-food-meta">
+                <div class="menu-name-price">
+                    <!-- food name -->
+                    <p>Sharwarma</p>
+                    <!-- food price -->
+                    <h4>2000</h4>
+                </div>
+
+                <div class="menu-spoon">
+                    <div class="menu-spoon-box-plus" onclick="decrement()" >
+                        <img src="img/minusicon.svg" alt="">
+                    </div>
+                    <div class="menu-spoon-box-qty">
+                            <h6 class="qty">1</h6>
+                            <!--count goes here--  -->
+                    </div>
+                    <div class="menu-spoon-box-minus" onclick="increment()">
+                        <img src="img/plusicon.svg" alt="">
+                    </div>
+                </div>
+                <button>Order</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+     <!-- Narrative -->
+    <div class="narrative">
+
+        <div class="img-box">
+            <img src="{% static 'img/cake.png' %}" />
+        </div>
+
+        <div class="text-box">
+            <h1>From Our Kitchen to Your Table</h1>
+            <p>
+               We started with a simple goal – to bring the best of local and international flavors to your doorstep.
+               Our team is passionate about creating meals that are not just tasty but also made with the finest ingredients.
+               friends and the military through its aid schemes.
+            </p>
+            <button>Read more</button>
+        </div>
+
+
+
+    </div>
+
+    <!-- Testimonials section -->
+    <div class="section">
+        <h1>Testimonials</h1>
+
+            <!--
+            <div class="testimonial">
+                <div class="test-image">
+                    <img src="img/engr.svg" />
+                </div>
+
+                <div class="test-txt">
+                    <h3>Systems Analyst</h3>
+                    <p>
+                        Nice platform to choose your dream space
+                    </p>
+                </div>
+            </div> -->
+
+        <div class="test-container">
+
+
+            <div class="tab">
+                <center>
+                <div class="test-img-box">
+                    <div class="test-img">
+
+                    </div>
+                </div>
+                <h3>Bose Oluyede</h3>
+                <p>Dedicated to crafting custom-made furniture wih sustainble materials</p>
+                </center>
+            </div>
+
+            <div class="tab">
+                <center>
+                <div class="test-img-box">
+                    <div class="test-img">
+
+                    </div>
+                </div>
+                <h3>Abiola Joseph</h3>
+                <p>
+                    Well deliver unparalleled expertise and innovation in all your projects.
+
+                </p>
+                </center>
+            </div>
+
+            <div class="tab">
+                <center>
+                <div class="test-img-box">
+                    <div class="test-img">
+
+                    </div>
+                </div>
+                <h3>Aisha Dadda</h3>
+                <p>you cater to both residential and commercial clients. </p>
+                </center>
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+
+    <!--Contact section -->
+    <div class="section">
+        <h1>Contact Us</h1>
+
+        <div class="contact-container">
+            <div class="contact-items ctext">
+                <h2>Let us Talk</h2>
+                <p>Got something for us send us a Message<br/>
+                    to get started
+                </p>
+            </div>
+            <div class="contact-items">
+                <form action="#" method="POST">
+                    <input type="text" name="#" placeholder="Your name"/>
+                    <input type="text" name="#" placeholder="Your phone"/>
+                    <textarea>
+
+                    </textarea>
+                    <button>Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+
+
