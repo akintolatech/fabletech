@@ -1,7 +1,7 @@
 {% extends "webcms/base.html" %}
 {% load static %}
 
-{% block title %}Buka-Home{% endblock %}
+{% block title %}{{ business.name_of_business }} {% endblock %}
 
 
 
@@ -32,7 +32,7 @@
 
             <div class="values_item">
                 <div class="value_imgbox">
-                    <img src="{% static 'img/fresh.png' %}" />
+                    <img src="{% static 'img/icons/solar.svg' %}" />
                 </div>
                 <div class="values_text">
                     <h4>Energy Contractor</h4>
@@ -42,24 +42,24 @@
 
             <div class="values_item">
                 <div class="value_imgbox">
-                    <img src="{% static 'img/delights.png' %}" />
+                    <img src="{% static 'img/icons/devices.svg' %}" />
                 </div>
                 <div class="values_text">
                     <h4>Computer Sales and Supply</h4>
                     <p>
-                        Carefully curated ingredients,
-                        with just a little more spice at the right place.
+                        Sales of durable,
+                        accesories, and computers.
                     </p>
                 </div>
             </div>
 
             <div class="values_item">
                 <div class="value_imgbox">
-                    <img src="{% static 'img/rida.png' %}" />
+                    <img src="{% static 'img/icons/terminal.svg' %}" />
                 </div>
                 <div class="values_text">
                     <h4>Software Development</h4>
-                    <p>Everything you order will be quickly delivered to your door.</p>
+                    <p>We develop efficient web and mobile apps for your brand.</p>
                 </div>
             </div>
 
@@ -68,13 +68,13 @@
 
     <!-- Hot picks section -->
     <div class="section">
-        <h1>Hot Picks</h1>
+        <h1>New Products</h1>
 
 
         <div class="container">
 
             <div class="item project2">
-                <img src="{% static 'img/streetlight.jpg' %}" />
+                <img src="{% static 'img/streetlight.png' %}" />
                 <div class="product-item-content">
                     <h3>Burgers</h3>
                     <p>Spicy and so beefy burger a call away</p>
@@ -84,7 +84,7 @@
             </div>
 
             <div class="item project2">
-                <img src="{% static 'img/streetlight.jpg' %}" />
+                <img src="{% static 'img/streetlight.png' %}" />
                 <div class="product-item-content">
                     <h3>Cakes</h3>
                     <p>Spicy and so beefy burger a call away</p>
@@ -94,7 +94,7 @@
             </div>
 
             <div class="item project2">
-                <img src="{% static 'img/streetlight.jpg' %}" />
+                <img src="{% static 'img/streetlight.png' %}" />
                 <div class="product-item-content">
                     <h3>Sharwarma</h3>
                     <p>Spicy and so beefy burger a call away</p>
@@ -111,7 +111,7 @@
     <div class="narrative">
 
         <div class="img-box">
-            <img src="{% static 'img/burgerimg.png' %}" />
+            <img src="{% static 'img/content.jpg' %}" />
         </div>
 
         <div class="text-box">
