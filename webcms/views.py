@@ -17,7 +17,7 @@ def menu(request):
     context = {
         "business": business
     }
-    return render(request, "webcms/pages/menu.html", context)
+    return render(request, "webcms/pages/shop.html", context)
 
 
 def about(request):
