@@ -27,6 +27,7 @@ a:active {
     --light: #daf8e5;
     --dark: #094D26;
     --radius: 10px;
+    --product-rad: 12px;
 }
 
 /* header styles */
@@ -249,6 +250,15 @@ a:active {
     border-bottom-right-radius: 30px;
    
 }
+
+#about-landing {
+    background-image: url("../img/contact.jpg");
+}
+
+#shop-landing {
+    background-image: url("../img/about.jpg");
+}
+
 
 .lnd-home {
     height:510px;
