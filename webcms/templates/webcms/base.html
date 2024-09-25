@@ -17,7 +17,7 @@
     <div id="header">
         <div class="wrap">
             
-            <div class="site-id logo">
+            <div class="site-id">
                 <img src="{% static 'img/cms/FTlogo.svg' %}" />
             </div>
 
@@ -86,7 +86,7 @@
                     <li>{{ business.phrase_of_business }}</li>
                     <li>{{ business.address_of_business }}</li>
                     <li>Monday - Saturday 8:00AM - 5:30PM <br/>Sundays Closed</li>
-                    <li><a href="tel:{{ business.phone_of_business }}" >{{ business.phone_of_business }}</a></li>
+                    <li><a href="tel:{{ business.phone_of_business }}" >(+234) {{ business.phone_of_business }}</a></li>
                     
                 </ul>
 
@@ -95,15 +95,17 @@
                     <a href="{% url 'website:index' %}"><li>Home</li></a>
                     <a href="{% url 'website:shop' %}"><li>Shop</li></a>
                     <a href="{% url 'website:about' %}"><li>About</li></a>
+                    <a href="{% url 'website:about' %}"><li>Login to Account</li></a>
+                    <a href="{% url 'website:about' %}"><li>Register for Free</li></a>
                 </ul>
 
                 <ul>
                     <li class="footer-heading">Order</li>
                     <a href="index.html"><li>Cart</li></a>
-                    <a href="pages/about.html"><li>My Wishlist</li></a>
-                    <a href="pages/services.html"><li>Track Order</li></a>
-                    <a href="pages/services.html"><li>Privacy Policy</li></a>
-                    <a href="pages/services.html"><li>Terms and Conditions</li></a>
+                    <a href="#"><li>My Wishlist</li></a>
+                    <a href="#"><li>Track Order</li></a>
+                    <a href="#"><li>Privacy Policy</li></a>
+                    <a href="#"><li>Terms and Conditions</li></a>
                 </ul>
 
                 <ul>
@@ -139,7 +141,7 @@
                     </div>
 
                     <div class="contact-icon">
-                        <img src="{% static 'img/estate-01.png' %}"/>
+                        <img src="{% static 'img/ft.png' %}"/>
                     </div>
 
                 </div>
