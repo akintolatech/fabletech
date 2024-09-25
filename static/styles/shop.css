@@ -215,7 +215,7 @@ input[type="search"] {
   /* border: 1px solid red; */
   box-shadow:  0.5px 0.5px 2px #ddd9d9, -0.5px -0.5px 2px #ddd9d9;
   margin-bottom: 16px;
-  border-radius: 24px;
+  /* border-radius: 24px; */
   padding: 24px;
   box-sizing: border-box;
 }
@@ -226,7 +226,7 @@ input[type="search"] {
   /* aspect-ratio: 3/2; */
   border-radius: 20px;
   /* border: 1px solid red; */
-  background-color: rgba(255, 228, 196, 0.296);
+  background-color: var(--light);
 }
 
 .menu-food-image img {
