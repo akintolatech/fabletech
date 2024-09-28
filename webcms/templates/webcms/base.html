@@ -28,16 +28,21 @@
                     <a href="{% url 'website:about' %}"><li>About</li></a>
 <!--                     <a href="pages/contact.html"><li>Contact Us</li></a> -->
                 </ul>  
-                
+
+
                 <div class="app-auth">
                     <button>
                         <img src="{% static 'img/icons/carticon.svg' %}" />
                         <p>Cart(0)</p>
                     </button>
-                    <button>
-                        <img src="{% static 'img/icons/accounticon.svg' %}" />
-                        <p>Login</p>
-                    </button>
+
+                    <a href="{% url 'login' %}">
+                        <button>
+                            <img src="{% static 'img/icons/accounticon.svg' %}" />
+                            <p>Login</p>
+                        </button>
+                    </a>
+
                 </div>
                 
             </div>
