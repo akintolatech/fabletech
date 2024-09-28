@@ -16,16 +16,17 @@
   <div class="header-pad"></div>
 {% endblock %}
 {% block content %}
-  <h1>Log-in</h1>
-  {% if form.errors %}
-    <p>
-      Incorrect Username or Password.
-      Please try again.
-    </p>
-  {% else %}
+  
+  <div class="auth-form">
+      <h1>Log-in</h1>
+    {% if form.errors %}
+      <p>
+        Incorrect Username or Password.
+        Please try again.
+      </p>
+    {% else %}
+    {% endif %}
 
-  {% endif %}
-  <div class="login-form">
     <form action="{% url 'login' %}" method="post">
       {{ form.as_p }}
       {% csrf_token %}

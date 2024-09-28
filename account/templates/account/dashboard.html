@@ -1,142 +1,232 @@
+{% extends "webcms/base.html" %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khalid Kitchen's™</title>
-    <link type="text/css" href="{% static 'styles/style.css' %}" rel="stylesheet" />
-    <link type="text/css" href="{% static 'styles/prynav.css' %}" rel="stylesheet" />
-    <!-- <script src="{% static 'js/jquery.js' %}"></script> -->
-    <link type="image/x-icon" href="{% static 'img/est.ico' %}" rel="icon" />
-</head>
-<body>
-    
-    <div id="header">
-
-        <div class="header-wrap">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <a href="{% url 'browser:legal' %}">
-                    <div class="site-id">
-                        <img src="{% static 'img/est.svg' %}" />
-                    </div>
-                </a>
-                <a href="#" style="margin-inline:8px"><div class="profile"> </div></a>
-            </div>
-
-            <div class="search-box">
-
-                <form action="#" method="POST">
-                    <input type="search" name="" placeholder="Search type, price, area"/>
-                </form>
-
-                <a href="#">
-                    <div class="search-icn-box">
-                        <img src="{% static 'img/search.svg' %}" alt="" />
-                    </div>
-                </a>
-            </div>
-
-            <!-- profile  -->
+{% block title %}{{ business.name_of_business }} {{ request.user.first_name|default:request.user.username }}'s-Dashboard{% endblock %}
 
 
-             <a href="{% url 'logout' %}"><button class="itm-btn" style="background-color: red;">Log out</button></a>
+{% block landing %}
+    <div class="landing" id="shop-landing">
+        <!-- <video src="media/vid.mp4"
+               autoplay="true">
+        </video> -->
 
-
+        <div class="text">
+            <h1>Welcome {{ request.user.first_name|default:request.user.username }}</h1>
+            <p>
+                Find the products you love <br/>
+                Shop for original and quality products from our store with amazing discounts!
+            </p>
+<!--            <button>Send a Message</button>-->
         </div>
-        
-    </div>
-
-    <div class="header-pad"></div>
-
-    <div class="main">
-
-        {% if request.user.is_authenticated %}
-           <h2>Welcome {{ request.user.first_name|default:request.user.username }}</h2>
-        <a href="{% url 'password_change' %}">Change password</a>
-        {% else %}
-                <a href="{% url 'login' %}"><button class="itm-btn" style="background-color: green;">Log in</button></a>
-        {% endif %}
-
-<!--        <div class="section-header">-->
-<!--            <p>We have {{ estate_count }} Meals for you</p>-->
-<!--        </div>-->
-
-        <!-- container component -->
-        <div class="container">
-        {%for estate in estates %}
-            <div class="item">
-
-                <div class="item-img-box">
-                    <img src="{{ estate.img.url }}" />
-                </div>
-                
-                <div class="item-detail">
-
-                    <div class="desc">
-
-                        <div class="icntext-container">
-                            <div class="icn-img">
-                                <img src="{% static 'img/villa.svg' %}" />
-                            </div>
-                            <div class="icn-text">
-                                <h3>{{ estate.title }}</h3>
-                            </div>
-                        </div>
-
-                        <div class="icn2">
-                            <div class="icntext-container left">
-                                <div class="icn-img">
-                                    <img src="{% static 'img/location.svg' %}" />
-                                </div>
-                                <div class="icn-text">
-                                    <p>{{ estate.area }}</p>
-                                </div>
-                            </div>
-
-                            <div class="icntext-container">
-                                <div class="icn-img" style="margin: 0;">
-                                    <img src="{% static 'img/pay.svg' %}" />
-                                </div>
-                                <div class="icn-text">
-                                    <p class="formatted-price" >{{ estate.total_price }}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="{% url 'browser:detail' estate.id %}"><button class="itm-btn">Order</button></a>
-                </div>
-
-            </div>
-        {%endfor %}
-        </div>
-
-        <div class="social-media-container">
-            <h5>Khalid Kitchen's™ &copy <span class="year">202 </span></h5>
-
-            <div class="social-media">
-
-                <div class="contact-icon">
-                    <img src="{% static 'img/social media/fb-01.svg' %}"/>
-                </div>
-
-<!--                <div class="contact-icon">-->
-<!--                    <img src="{%static 'img/social media/x-01.svg' %}"/>-->
-<!--                </div>-->
-
-<!--                <div class="contact-icon">-->
-<!--                    <img src="{% static 'img/social media/tiktok-01.svg' %}"/>-->
-<!--                </div>-->
-
-            </div>
-
-        </div>
-
 
     </div>
+{% endblock %}
+
+{% block content %}
+    <!-- section -->
+    <div class="section">
+        <h1>Products</h1>
+
+        <div class="shop-container">
+
+            <div class="aside-container">
+
+                <div class="search-box">
+                    <input type="search" placeholder="Search products" />
+                    <div class="icn-box">
+                        <img src="{% static 'img/icons/search.svg' %}" />
+                    </div>
+                </div>
+
+                <h4>Categories</h4>
+
+                <div class="user-profile">
+
+                    <!-- Categories -->
+                    <div class="user-func">
+                        <div class="icon-and-text">
+                            <div class="func-icon"><img src="{% static 'img/icons/terminal.svg' %}"></div>
+                            <h4>Computer accesories</h4>
+                        </div>
+                        <h4>(3)</h4>
+                    </div>
+
+                </div>
+
+                <!-- <div class="related-products-container">
+                    <h4>Best Deals</h4>
+
+                    <div class="user-func">
+                        <div class="icon-and-text">
+                            <div class="func-icon"><img src="../img/burger.png"></div>
+                            <h4>Small Chops</h4>
+                        </div>
+                        <h4>(3)</h4>
+                    </div>
+
+                    <div class="foodtab">
+
+                        <div class="foodimg">
+                            <img src="../img/shawarma.png"/>
+                        </div>
+                        <div class="foodtext">
+                            <h4>Chicken Sharwarma</h4>
+                            <p>$300</p>
+                        </div>
+
+                    </div>
+                    <div class="foodtab">
+
+                        <div class="foodimg">
+                            <img src="../img/shawarma.png"/>
+                        </div>
+                        <div class="foodtext">
+                            <h4>Chicken Sharwarma</h4>
+                            <p>$300</p>
+                        </div>
+
+                    </div>
+                </div> -->
 
 
-    <script src="{% static 'js/main.js' %}"></script>
-</body>
-</html>
+            </div>
+
+            <div class="container-of-containers">
+
+                <div class="container">
+
+                    <!-- Product Card -->
+                    <div class="product-card-box">
+
+                        <!-- Product image -->
+                        <div class="product-card-image">
+                            <img src="{% static 'img/h2.jpg' %}"/>
+                        </div>
+
+                        <!-- Product meta -->
+                        <div class="product-card-meta">
+
+                            <div class="product-card-price">
+                                <p>Dell Laptop</p>
+                                <h4>2000</h4>
+                            </div>
+
+                            <div class="product-qty-controls-container">
+
+                                <div class="product-qty-controls" >
+                                    <img src="{% static 'img/icons/remove.svg' %}" alt="">
+                                </div>
+
+                                <div class="product-card-box-qty">
+                                        <h6 class="qty">1</h6>
+                                </div>
+
+                                <div class="product-qty-controls" >
+                                    <img src="{% static 'img/icons/add.svg' %}" alt="">
+                                </div>
+
+                            </div>
+
+
+
+                        </div>
+
+                        <button class="product-btn">Order</button>
+
+                    </div>
+
+                    <!-- Product Card -->
+                    <div class="product-card-box">
+
+                        <!-- Product image -->
+                        <div class="product-card-image">
+                            <img src="{% static 'img/hp.jpg' %}"/>
+                        </div>
+
+                        <!-- Product meta -->
+                        <div class="product-card-meta">
+
+                            <div class="product-card-price">
+                                <p>Hp Laptop</p>
+                                <h4>2000</h4>
+                            </div>
+
+                            <div class="product-qty-controls-container">
+
+                                <div class="product-qty-controls" >
+                                    <img src="{% static 'img/icons/remove.svg' %}" alt="">
+                                </div>
+
+                                <div class="product-card-box-qty">
+                                        <h6 class="qty">1</h6>
+                                </div>
+
+                                <div class="product-qty-controls" >
+                                    <img src="{% static 'img/icons/add.svg' %}" alt="">
+                                </div>
+
+                            </div>
+
+
+
+                        </div>
+
+                        <button class="product-btn">Order</button>
+
+                    </div>
+
+
+                    <!-- Product Card -->
+                    <div class="product-card-box">
+
+                        <!-- Product image -->
+                        <div class="product-card-image">
+                            <img src="{% static 'img/bat.png' %}"/>
+                        </div>
+
+                        <!-- Product meta -->
+                        <div class="product-card-meta">
+
+                            <div class="product-card-price">
+                                <p>Inverter Battery</p>
+                                <h4>2000</h4>
+                            </div>
+
+                            <div class="product-qty-controls-container">
+
+                                <div class="product-qty-controls" >
+                                    <img src="{% static 'img/icons/remove.svg' %}" alt="">
+                                </div>
+
+                                <div class="product-card-box-qty">
+                                        <h6 class="qty">1</h6>
+                                </div>
+
+                                <div class="product-qty-controls" >
+                                    <img src="{% static 'img/icons/add.svg' %}" alt="">
+                                </div>
+
+                            </div>
+
+
+
+                        </div>
+
+                        <button class="product-btn">Order</button>
+
+                    </div>
+
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+{% endblock %}
+
+
+

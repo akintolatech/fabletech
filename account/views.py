@@ -61,3 +61,14 @@ def edit(request):
             'profile_form': profile_form
         },
     )
+
+
+def dashboard(request):
+    context = {
+        "msg": "Wired"
+    }
+    return render(
+        request,
+        'account/dashboard.html',
+        context,
+    )
