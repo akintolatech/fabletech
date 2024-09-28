@@ -63,6 +63,7 @@ def edit(request):
     )
 
 
+@login_required()
 def dashboard(request):
     context = {
         "msg": "Wired"
