@@ -12,7 +12,7 @@ def index(request):
     return render(request, "webcms/pages/index.html", context)
 
 
-def menu(request):
+def shop(request):
     business = WebDetails.objects.get(id=1)
     context = {
         "business": business

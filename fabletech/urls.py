@@ -23,4 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("webcms.urls")),
     path('account/', include('account.urls')),
+    path('shop/', include('shop.urls', namespace="shop")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
