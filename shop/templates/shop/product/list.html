@@ -27,7 +27,8 @@
 {% block content %}
   <!-- section -->
   <div class="section">
-        <h1>Products</h1>
+<!--        <h1>Products</h1>-->
+        <h1>{% if category %}{{ category.name }}{% else %}Products{% endif %}</h1>
 
         <div class="shop-container">
 
@@ -46,13 +47,29 @@
                 <div class="user-profile">
 
                     <!-- Categories -->
-                    <div class="user-func">
-                        <div class="icon-and-text">
-                            <div class="func-icon"><img src="{% static 'img/icons/terminal.svg' %}"></div>
-                            <h4>Computer accesories</h4>
+                    <a href="{{ 'shop:product_list' }}">
+                        <div class="user-func"  {% if not category %}class="selected"{% endif %}>
+                            <div class="icon-and-text">
+                                <div class="func-icon"><img src="{% static 'img/icons/terminal.svg' %}"></div>
+                                <h4>All</h4>
+                            </div>
+                            <h4>(3)</h4>
                         </div>
-                        <h4>(3)</h4>
-                    </div>
+                    </a>
+
+                    {% for c in categories %}
+                    <a href="{{ c.get_absolute_url }}">
+                        <div class="user-func">
+                            <div class="icon-and-text" {% if category.slug == c.slug %}class="selected"{% endif %} >
+                                <div class="func-icon"><img src="{% static 'img/icons/terminal.svg' %}"></div>
+                                <h4>{{ c.name }}</h4>
+                            </div>
+                            <h4>(3)</h4>
+                        </div>
+                    </a>
+                    {% endfor %}
+
+
 
                 </div>
 
@@ -97,21 +114,21 @@
             <div class="container-of-containers">
 
                 <div class="container">
-
+                    {% for product in products %}
                     <!-- Product Card -->
                     <div class="product-card-box">
 
                         <!-- Product image -->
                         <div class="product-card-image">
-                            <img src="{% static 'img/h2.jpg' %}"/>
+                            <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}"/>
                         </div>
 
                         <!-- Product meta -->
                         <div class="product-card-meta">
 
                             <div class="product-card-price">
-                                <p>Dell Laptop</p>
-                                <h4>2000</h4>
+                                <p>{{ product.name }}</p>
+                                <h4>${{ product.price }}</h4>
                             </div>
 
                             <div class="product-qty-controls-container">
@@ -138,90 +155,7 @@
 
                     </div>
 
-                    <!-- Product Card -->
-                    <div class="product-card-box">
-
-                        <!-- Product image -->
-                        <div class="product-card-image">
-                            <img src="{% static 'img/hp.jpg' %}"/>
-                        </div>
-
-                        <!-- Product meta -->
-                        <div class="product-card-meta">
-
-                            <div class="product-card-price">
-                                <p>Hp Laptop</p>
-                                <h4>2000</h4>
-                            </div>
-
-                            <div class="product-qty-controls-container">
-
-                                <div class="product-qty-controls" >
-                                    <img src="{% static 'img/icons/remove.svg' %}" alt="">
-                                </div>
-
-                                <div class="product-card-box-qty">
-                                        <h6 class="qty">1</h6>
-                                </div>
-
-                                <div class="product-qty-controls" >
-                                    <img src="{% static 'img/icons/add.svg' %}" alt="">
-                                </div>
-
-                            </div>
-
-
-
-                        </div>
-
-                        <button class="product-btn">Order</button>
-
-                    </div>
-
-
-                    <!-- Product Card -->
-                    <div class="product-card-box">
-
-                        <!-- Product image -->
-                        <div class="product-card-image">
-                            <img src="{% static 'img/bat.png' %}"/>
-                        </div>
-
-                        <!-- Product meta -->
-                        <div class="product-card-meta">
-
-                            <div class="product-card-price">
-                                <p>Inverter Battery</p>
-                                <h4>2000</h4>
-                            </div>
-
-                            <div class="product-qty-controls-container">
-
-                                <div class="product-qty-controls" >
-                                    <img src="{% static 'img/icons/remove.svg' %}" alt="">
-                                </div>
-
-                                <div class="product-card-box-qty">
-                                        <h6 class="qty">1</h6>
-                                </div>
-
-                                <div class="product-qty-controls" >
-                                    <img src="{% static 'img/icons/add.svg' %}" alt="">
-                                </div>
-
-                            </div>
-
-
-
-                        </div>
-
-                        <button class="product-btn">Order</button>
-
-                    </div>
-
-
-
-
+                    {% endfor %}
                 </div>
 
             </div>
@@ -243,6 +177,7 @@
       {% endfor %}
     </ul>
   </div>
+
   <div id="main" class="product-list">
     <h1>{% if category %}{{ category.name }}{% else %}Products{% endif %}</h1>
     {% for product in products %}
