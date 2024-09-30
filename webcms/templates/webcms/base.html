@@ -10,6 +10,7 @@
     <link type="text/css" href="{% static 'styles/auth.css' %}" rel="stylesheet" />
     <link type="text/css" href="{% static 'styles/shop.css' %}" rel="stylesheet" />
     <link type="text/css" href="{% static 'styles/about.css' %}" rel="stylesheet" />
+    <link type="text/css" href="{% static 'styles/cart.css' %}" rel="stylesheet" />
     <link type="x-icon" href="{% static 'img/ft.ico' %}" rel="icon" />
     <script src="{% static 'js/jquery.js' %}"></script>
 </head>
@@ -34,10 +35,25 @@
 
 
                 <div class="app-auth">
-                    <button>
-                        <img src="{% static 'img/icons/carticon.svg' %}" />
-                        <p>Cart(0)</p>
-                    </button>
+
+                    <a href="{% url 'cart:cart_detail' %}">
+                        <button>
+                            <img src="{% static 'img/icons/carticon.svg' %}" />
+                            <p>
+                                Cart(
+                                    {% with total_items=cart|length %}
+                                    {% if total_items > 0 %}
+
+                                        {{ total_items }} 
+                    
+                                    {% elif not order %}
+                                        0
+                                    {% endif %}
+                                    {% endwith %}
+                                )
+                            </p>
+                        </button>
+                    </a>
 
                     {% if request.user.is_authenticated %}
                         <form method="POST" action="{% url 'logout' %}">

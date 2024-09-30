@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'cart.apps.CartConfig',
     'webcms.apps.WebcmsConfig',
     'shop.apps.ShopConfig',
 ]
@@ -86,6 +87,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 # custom context processors
                 'webcms.context_processors.web_details',
+                'cart.context_processors.cart',
             ],
         },
     },
