@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'orders.apps.OrderConfig',
     'cart.apps.CartConfig',
     'webcms.apps.WebcmsConfig',
     'shop.apps.ShopConfig',

@@ -23,6 +23,7 @@
     {% endwith %}
 
   </h1>
+
   <table class="cart">
     <thead>
       <tr>
@@ -49,13 +50,13 @@
               <form action="{% url "cart:cart_add" product.id %}" method="post">
                 {{ item.update_quantity_form.quantity }}
                 {{ item.update_quantity_form.override }}
-                <input type="submit" value="Update">
+                <input type="submit" value="Update" style="width: 80px;">
                 {% csrf_token %}
               </form>
             </td>
             <td>
               <form action="{% url "cart:cart_remove" product.id %}" method="post">
-                <input type="submit" value="Remove">
+                <input type="submit" value="Remove" style="width: 80px;">
                 {% csrf_token %}
               </form>
             </td>
@@ -72,7 +73,7 @@
     </tbody>
   </table>
   <p class="text-right">
-    <a href="{% url "shop:product_list" %}" class="button
+    <a href="{% url 'shop:product_list' %}" class="button
     light">Continue shopping</a>
 
   </p>
