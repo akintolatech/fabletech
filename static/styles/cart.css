@@ -6,19 +6,19 @@
     font-family:helvetica, sans-serif;
 } */
 
-h1, h2, h3, h4, h5 , h6 {
+/* h1, h2, h3, h4, h5 , h6 {
     font-family: 'Ubuntu', sans-serif; font-weight:normal;
-}
+} */
 
-a {
+/* a {
     text-decoration:none;
     color:#5993bb;
 }
 
 a:hover {
     color:#77b6e2;
-}
-
+} */
+/* 
 a.button, input[type="submit"] {
     color:#fff;
     background:#5993bb;
@@ -26,6 +26,12 @@ a.button, input[type="submit"] {
     padding:10px 20px;
     font-size:14px;
     border:0;
+} */
+
+
+#id_quantity {
+    width: 120px;
+    height: 34px;
 }
 
 a.button.light {
@@ -85,7 +91,7 @@ td input[type="submit"] {
     padding:4px 10px;
 }
 
-form p label, form p input {
+/* form p label, form p input {
     float:left;
     clear:both;
 }
@@ -93,9 +99,9 @@ form p label, form p input {
 form p label {
     font-size:14px;
     padding-bottom:4px;
-}
+} */
 
-form p input {
+/* form p input {
     width:300px;
     font-size:13px;
     margin-bottom:10px;
@@ -104,7 +110,7 @@ form p input {
     background:#efefef;
     color:#666;
     border-radius:4px;
-}
+} */
 
 ul.errorlist {
    float:left;
@@ -207,11 +213,11 @@ ul.errorlist {
     font-weight:bold;
 }
 
-.product-detail img {
+/* .product-detail img {
     width:40%;
     float:left;
     padding:0 20px 20px 0;
-}
+} */
 
 .product-detail h1 {
     margin-bottom:0;

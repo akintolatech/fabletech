@@ -67,7 +67,7 @@
         </div>
     </div>
 
-    <!-- Hot picks section -->
+    <!-- New products section -->
     <div class="section">
         <h1>New Products</h1>
 
@@ -135,171 +135,39 @@
         <h1>Shop</h1>
 
         <div class="container">
-
+            {% for product in products %}
             <!-- Product Card -->
             <div class="product-card-box">
 
                 <!-- Product image -->
-                <div class="product-card-image">
-                    <img src="{% static 'img/h2.jpg' %}"/>
+                <div class="product-card-image-box">
+                    <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}"/>
                 </div>
 
                 <!-- Product meta -->
                 <div class="product-card-meta">
 
                     <div class="product-card-price">
-                        <p>Dell Laptop</p>
-                        <h4>2000</h4>
+                        <p>{{ product.name |truncatewords:5|linebreaks }}</p>
+                        <h4>${{ product.price }}</h4>
                     </div>
 
                     <div class="product-qty-controls-container">
 
-                        <div class="product-qty-controls" >
-                            <img src="{% static 'img/icons/remove.svg' %}" alt="">
-                        </div>
-
-                        <div class="product-card-box-qty">
-                                <h6 class="qty">1</h6>
-                        </div>
-
-                        <div class="product-qty-controls" >
-                            <img src="{% static 'img/icons/add.svg' %}" alt="">
-                        </div>
+                        <a href="{{ product.get_absolute_url }}">
+                            <div class="product-qty-controls" >
+                                <img src="{% static 'img/icons/add_to_cart.svg' %}" alt="">
+                            </div>
+                        </a>
 
                     </div>
 
-                    
-
                 </div>
-
-                <button class="product-btn">Order</button>
 
             </div>
 
-            <!-- Product Card -->
-            <div class="product-card-box">
-
-                <!-- Product image -->
-                <div class="product-card-image">
-                    <img src="{% static 'img/hp.jpg' %}"/>
-                </div>
-
-                <!-- Product meta -->
-                <div class="product-card-meta">
-
-                    <div class="product-card-price">
-                        <p>Hp Laptop</p>
-                        <h4>2000</h4>
-                    </div>
-
-                    <div class="product-qty-controls-container">
-
-                        <div class="product-qty-controls" >
-                            <img src="{% static 'img/icons/remove.svg' %}" alt="">
-                        </div>
-
-                        <div class="product-card-box-qty">
-                                <h6 class="qty">1</h6>
-                        </div>
-
-                        <div class="product-qty-controls" >
-                            <img src="{% static 'img/icons/add.svg' %}" alt="">
-                        </div>
-
-                    </div>
-
-                    
-
-                </div>
-
-                <button class="product-btn">Order</button>
-
-            </div>
-
-            <!-- Product Card -->
-            <div class="product-card-box">
-
-                <!-- Product image -->
-                <div class="product-card-image">
-                    <img src="{% static 'img/hp.jpg' %}"/>
-                </div>
-
-                <!-- Product meta -->
-                <div class="product-card-meta">
-
-                    <div class="product-card-price">
-                        <p>Hp Laptop</p>
-                        <h4>2000</h4>
-                    </div>
-
-                    <div class="product-qty-controls-container">
-
-                        <div class="product-qty-controls" >
-                            <img src="{% static 'img/icons/remove.svg' %}" alt="">
-                        </div>
-
-                        <div class="product-card-box-qty">
-                                <h6 class="qty">1</h6>
-                        </div>
-
-                        <div class="product-qty-controls" >
-                            <img src="{% static 'img/icons/add.svg' %}" alt="">
-                        </div>
-
-                    </div>
-
-                    
-
-                </div>
-
-                <button class="product-btn">Order</button>
-
-            </div>
-
-
-
-            <!-- Product Card -->
-            <div class="product-card-box">
-
-                <!-- Product image -->
-                <div class="product-card-image">
-                    <img src="{% static 'img/bat.png' %}"/>
-                </div>
-
-                <!-- Product meta -->
-                <div class="product-card-meta">
-
-                    <div class="product-card-price">
-                        <p>Inverter Battery</p>
-                        <h4>2000</h4>
-                    </div>
-
-                    <div class="product-qty-controls-container">
-
-                        <div class="product-qty-controls" >
-                            <img src="{% static 'img/icons/remove.svg' %}" alt="">
-                        </div>
-
-                        <div class="product-card-box-qty">
-                                <h6 class="qty">1</h6>
-                        </div>
-
-                        <div class="product-qty-controls" >
-                            <img src="{% static 'img/icons/add.svg' %}" alt="">
-                        </div>
-
-                    </div>
-
-                    
-
-                </div>
-
-                <button class="product-btn">Order</button>
-
-            </div>
- 
+            {% endfor %}
         </div>
-
 
     </div>
 

@@ -89,7 +89,7 @@
                         <div class="product-card-meta">
 
                             <div class="product-card-price">
-                                <p>{{ product.name }}</p>
+                                <p>{{ product.name |truncatewords:5|linebreaks }}</p>
                                 <h4>${{ product.price }}</h4>
                             </div>
 
