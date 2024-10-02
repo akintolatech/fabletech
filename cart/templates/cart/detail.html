@@ -42,12 +42,12 @@
             <td>
               <a href="{{ product.get_absolute_url }}">
                 <img src="{% if product.image %}{{ product.image.url }}
-                {% else %}{% static "img/no_image.png" %}{% endif %}">
+                {% else %}{% static 'img/no_image.png' %}{% endif %}">
               </a>
             </td>
             <td>{{ product.name }}</td>
             <td>
-              <form action="{% url "cart:cart_add" product.id %}" method="post">
+              <form action="{% url 'cart:cart_add' product.id %}" method="post">
                 {{ item.update_quantity_form.quantity }}
                 {{ item.update_quantity_form.override }}
                 <input type="submit" value="Update" style="width: 80px;">
@@ -55,7 +55,7 @@
               </form>
             </td>
             <td>
-              <form action="{% url "cart:cart_remove" product.id %}" method="post">
+              <form action="{% url 'cart:cart_remove' product.id %}" method="post">
                 <input type="submit" value="Remove" style="width: 80px;">
                 {% csrf_token %}
               </form>
@@ -72,6 +72,45 @@
       </tr>
     </tbody>
   </table>
+
+  {% for item in cart %}
+      {% with product=item.product %}
+
+        <div class="cart-item-container">
+
+          <div class="cart-img-details">
+
+              <div class="cart-item-img-box">
+                  <a href="{{ product.get_absolute_url }}">
+                    <img src="{% if product.image %}{{ product.image.url }}
+                    {% else %}{% static 'img/no_image.png' %}{% endif %}">
+                  </a>
+              </div>
+              
+              <div class="cart-item-details">
+                  <p>{{ product.name }}</p>
+                  <p>${{ item.price }} @ ${{ item.total_price }}</p>
+              </div>
+          </div>
+
+          <div class="cart-qty-control">
+            
+              <form action="{% url 'cart:cart_remove' product.id %}" method="post">
+                <input type="submit" value="Remove" style="width: 80px;">
+                {% csrf_token %}
+              </form>
+
+              <form action="{% url 'cart:cart_add' product.id %}" method="post">
+                {{ item.update_quantity_form.quantity }}
+                {{ item.update_quantity_form.override }}
+                <input type="submit" value="Update" style="width: 80px;">
+                {% csrf_token %}
+              </form>
+          </div>
+        </div>
+        
+      {% endwith %}
+  {% endfor %}
   <p class="text-right">
     <a href="{% url 'shop:product_list' %}" class="button
     light">Continue shopping</a>
