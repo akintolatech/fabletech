@@ -75,13 +75,13 @@
 
             <div class="container-of-containers">
 
-                <div class="container">
+                <div class="product-container">
                     {% for product in products %}
                     <!-- Product Card -->
                     <div class="product-card-box">
 
                         <!-- Product image -->
-                        <div class="product-card-image">
+                        <div class="product-card-image-box">
                             <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}"/>
                         </div>
 
@@ -95,25 +95,15 @@
 
                             <div class="product-qty-controls-container">
 
-                                <div class="product-qty-controls" >
-                                    <img src="{% static 'img/icons/remove.svg' %}" alt="">
-                                </div>
-
-                                <div class="product-card-box-qty">
-                                        <h6 class="qty">1</h6>
-                                </div>
-
-                                <div class="product-qty-controls" >
-                                    <img src="{% static 'img/icons/add.svg' %}" alt="">
-                                </div>
+                                <a href="{{ product.get_absolute_url }}">
+                                    <div class="product-qty-controls" >
+                                        <img src="{% static 'img/icons/add_to_cart.svg' %}" alt="">
+                                    </div>
+                                </a>
 
                             </div>
 
-
-
                         </div>
-
-                        <a href="{{ product.get_absolute_url }}"><button class="product-btn">Order</button></a>
 
                     </div>
 
