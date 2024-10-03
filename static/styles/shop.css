@@ -4,6 +4,7 @@
   /* justify-content: space-between;
   border: 1px solid #fb1f4c;
   display: flex; */
+  border: 1px solid #fb1f4c;
 }
 
 .container-of-containers {
@@ -94,7 +95,7 @@ input[type="search"] {
     height: auto;
      /* border: 1px solid #fb1f4c; */
     background-color: white;
-    border-radius: 5px;
+    /* border-radius: 5px; */
     box-shadow: 1px 1px 5px #ddd9d9;
     /* z-index: 5; */
     /* float: right; */

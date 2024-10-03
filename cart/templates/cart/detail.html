@@ -9,323 +9,159 @@
 
       <!-- section -->
       <div class="section">
-        <h1>Products</h1>
 
-        <div class="shop-container">
+        <h1>
+    
+          {% with total_items=cart|length %}
+            {% if total_items > 0 %}
+              Your shopping cart
+              <a href="{% url 'cart:cart_detail' %}">
+                {{ total_items }} item{{ total_items|pluralize }},
+                ${{ cart.get_total_price }}
+              </a>
+            {% elif not order %}
+              Your cart is empty.
+            {% endif %}
+          {% endwith %}
+      
+        </h1>
 
-            <div class="aside-container">
+        <div class="shop-container for-cart">
 
-                <div class="search-box">
-                    <input type="search" placeholder="Search products" />
-                    <div class="icn-box">
-                        <img src="{% static 'img/icons/search.svg' %}" />
-                    </div>
-                </div>
+            
 
-                <h4>Categories</h4>
+          <div class="container-of-containers">
 
-                <div class="user-profile">
+                <div class="cart-item-container">
 
-                    <!-- Categories -->
-                    <div class="user-func">
-                        <div class="icon-and-text">
-                            <div class="func-icon"><img src="{% static 'img/icons/terminal.svg' %}"></div>
-                            <h4>Computer accesories</h4>
-                        </div>
-                        <h4>(3)</h4>
-                    </div>
-
-                </div>
-
-                <!-- <div class="related-products-container">
-                    <h4>Best Deals</h4>
-
-                    <div class="user-func">
-                        <div class="icon-and-text">
-                            <div class="func-icon"><img src="../img/burger.png"></div>
-                            <h4>Small Chops</h4>
-                        </div>
-                        <h4>(3)</h4>
-                    </div>
-
-                    <div class="foodtab">
-
-                        <div class="foodimg">
-                            <img src="../img/shawarma.png"/>
-                        </div>
-                        <div class="foodtext">
-                            <h4>Chicken Sharwarma</h4>
-                            <p>$300</p>
-                        </div>
-
-                    </div>
-                    <div class="foodtab">
-
-                        <div class="foodimg">
-                            <img src="../img/shawarma.png"/>
-                        </div>
-                        <div class="foodtext">
-                            <h4>Chicken Sharwarma</h4>
-                            <p>$300</p>
-                        </div>
-
-                    </div>
-                </div> -->
-
-
-            </div>
-
-            <div class="container-of-containers">
-
-                <div class="container">
-
-                    <!-- Product Card -->
-                    <div class="product-card-box">
-
-                        <!-- Product image -->
-                        <div class="product-card-image">
-                            <img src="{% static 'img/h2.jpg' %}"/>
-                        </div>
-
-                        <!-- Product meta -->
-                        <div class="product-card-meta">
-
-                            <div class="product-card-price">
-                                <p>Dell Laptop</p>
-                                <h4>2000</h4>
+                  {% for item in cart %}
+                    {% with product=item.product %}
+              
+                      <div class="cart-item-card">
+              
+                        <div class="cart-img-details">
+              
+                            <div class="cart-item-img-box">
+                                <a href="{{ product.get_absolute_url }}">
+                                  <img src="{% if product.image %}{{ product.image.url }}
+                                  {% else %}{% static 'img/no_image.png' %}{% endif %}">
+                                </a>
                             </div>
-
-                            <div class="product-qty-controls-container">
-
-                                <div class="product-qty-controls" >
-                                    <img src="{% static 'img/icons/remove.svg' %}" alt="">
-                                </div>
-
-                                <div class="product-card-box-qty">
-                                        <h6 class="qty">1</h6>
-                                </div>
-
-                                <div class="product-qty-controls" >
-                                    <img src="{% static 'img/icons/add.svg' %}" alt="">
-                                </div>
-
-                            </div>
-
                             
-
-                        </div>
-
-                        <button class="product-btn">Order</button>
-
-                    </div>
-
-                    <!-- Product Card -->
-                    <div class="product-card-box">
-
-                        <!-- Product image -->
-                        <div class="product-card-image">
-                            <img src="{% static 'img/hp.jpg' %}"/>
-                        </div>
-
-                        <!-- Product meta -->
-                        <div class="product-card-meta">
-
-                            <div class="product-card-price">
-                                <p>Hp Laptop</p>
-                                <h4>2000</h4>
+                            <div class="cart-item-details">
+                                <p>{{ product.name }}</p>
+                                <p style="margin: 0;">${{ item.total_price }}</p>
+                                <!-- ${{ item.price }} @  -->
                             </div>
-
-                            <div class="product-qty-controls-container">
-
-                                <div class="product-qty-controls" >
-                                    <img src="{% static 'img/icons/remove.svg' %}" alt="">
-                                </div>
-
-                                <div class="product-card-box-qty">
-                                        <h6 class="qty">1</h6>
-                                </div>
-
-                                <div class="product-qty-controls" >
-                                    <img src="{% static 'img/icons/add.svg' %}" alt="">
-                                </div>
-
-                            </div>
-
-                            
-
                         </div>
-
-                        <button class="product-btn">Order</button>
-
-                    </div>
-
-
-                    <!-- Product Card -->
-                    <div class="product-card-box">
-
-                        <!-- Product image -->
-                        <div class="product-card-image">
-                            <img src="{% static 'img/bat.png' %}"/>
-                        </div>
-
-                        <!-- Product meta -->
-                        <div class="product-card-meta">
-
-                            <div class="product-card-price">
-                                <p>Inverter Battery</p>
-                                <h4>2000</h4>
+              
+                        <div class="cart-qty-control">
+              
+                          <div class="qty-control-card">
+              
+                              <form action="{% url 'cart:cart_add' product.id %}" method="post" class="update-qty">
+                                {{ item.update_quantity_form.quantity }}
+                                {{ item.update_quantity_form.override }}
+                                <input type=image src="{% static 'img/icons/addcircle.svg' %}" alt="Submit feedback">
+                                {% csrf_token %}
+                              </form>
+              
+                          </div>
+              
+                            <div class="qty-control-card">
+                                <form action="{% url 'cart:cart_remove' product.id %}" method="post">
+                                  <input type="image" src="{% static 'img/icons/delete.svg' %}" value="Remove" >
+                                  {% csrf_token %}
+                                </form>
                             </div>
-
-                            <div class="product-qty-controls-container">
-
-                                <div class="product-qty-controls" >
-                                    <img src="{% static 'img/icons/remove.svg' %}" alt="">
-                                </div>
-
-                                <div class="product-card-box-qty">
-                                        <h6 class="qty">1</h6>
-                                </div>
-
-                                <div class="product-qty-controls" >
-                                    <img src="{% static 'img/icons/add.svg' %}" alt="">
-                                </div>
-
-                            </div>
-
+              
+                
+                          
+                
+              
                         </div>
-
-                        <button class="product-btn">Order</button>
-
-                    </div>
-
-  
-
+              
+                      </div>
+                      
+                    {% endwith %}
+                  {% endfor %}
  
                 </div>
 
             </div>
+
+          <div class="aside-container">
+
+              <!-- <h4>Categories</h4> -->
+
+              <div class="user-profile">
+
+                  <!-- Categories -->
+                  <div class="user-func">
+                      <div class="icon-and-text">
+                          <div class="func-icon"><img src="{% static 'img/icons/verified.svg' %}"></div>
+                          <h4>Order Summary</h4>
+                      </div>
+                      <!-- <h4>(3)</h4> -->
+                  </div>
+
+              </div>
+
+              <ul>
+                {% for item in cart %}
+                  <li>
+                    {{ item.quantity }}x {{ item.product.name }}
+                    <span>${{ item.total_price }}</span>
+                  </li>
+                {% endfor %}
+              </ul>
+              <p>Total: ${{ cart.get_total_price }}</p>
+
+              <!-- <div class="related-products-container">
+                  <h4>Best Deals</h4>
+
+                  <div class="user-func">
+                      <div class="icon-and-text">
+                          <div class="func-icon"><img src="../img/burger.png"></div>
+                          <h4>Small Chops</h4>
+                      </div>
+                      <h4>(3)</h4>
+                  </div>
+
+                  <div class="foodtab">
+
+                      <div class="foodimg">
+                          <img src="../img/shawarma.png"/>
+                      </div>
+                      <div class="foodtext">
+                          <h4>Chicken Sharwarma</h4>
+                          <p>$300</p>
+                      </div>
+
+                  </div>
+                  <div class="foodtab">
+
+                      <div class="foodimg">
+                          <img src="../img/shawarma.png"/>
+                      </div>
+                      <div class="foodtext">
+                          <h4>Chicken Sharwarma</h4>
+                          <p>$300</p>
+                      </div>
+
+                  </div>
+              </div> -->
+
+
+          </div>
 
         </div>
 
     </div>
 
 
-  <h1>
-    
-    {% with total_items=cart|length %}
-      {% if total_items > 0 %}
-        Your shopping cart
-        <a href="{% url 'cart:cart_detail' %}">
-          {{ total_items }} item{{ total_items|pluralize }},
-          ${{ cart.get_total_price }}
-        </a>
-      {% elif not order %}
-        Your cart is empty.
-      {% endif %}
-    {% endwith %}
 
-  </h1>
 
-  <!-- <table class="cart">
-    <thead>
-      <tr>
-        <th>Image</th>
-        <th>Product</th>
-        <th>Quantity</th>
-        <th>Remove</th>
-        <th>Unit price</th>
-        <th>Price</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for item in cart %}
-        {% with product=item.product %}
-          <tr>
-            <td>
-              <a href="{{ product.get_absolute_url }}">
-                <img src="{% if product.image %}{{ product.image.url }}
-                {% else %}{% static 'img/no_image.png' %}{% endif %}">
-              </a>
-            </td>
-            <td>{{ product.name }}</td>
-            <td>
-              <form action="{% url 'cart:cart_add' product.id %}" method="post">
-                {{ item.update_quantity_form.quantity }}
-                {{ item.update_quantity_form.override }}
-                <input type="submit" value="Update" style="width: 80px;">
-                {% csrf_token %}
-              </form>
-            </td>
-            <td>
-              <form action="{% url 'cart:cart_remove' product.id %}" method="post">
-                <input type="submit" value="Remove" style="width: 80px;">
-                {% csrf_token %}
-              </form>
-            </td>
-            <td class="num">${{ item.price }}</td>
-            <td class="num">${{ item.total_price }}</td>
-          </tr>
-        {% endwith %}
-      {% endfor %}
-      <tr class="total">
-        <td>Total</td>
-        <td colspan="4"></td>
-        <td class="num">${{ cart.get_total_price }}</td>
-      </tr>
-    </tbody>
-  </table> -->
-
-  {% for item in cart %}
-      {% with product=item.product %}
-
-        <div class="cart-item-container">
-
-          <div class="cart-img-details">
-
-              <div class="cart-item-img-box">
-                  <a href="{{ product.get_absolute_url }}">
-                    <img src="{% if product.image %}{{ product.image.url }}
-                    {% else %}{% static 'img/no_image.png' %}{% endif %}">
-                  </a>
-              </div>
-              
-              <div class="cart-item-details">
-                  <p>{{ product.name }}</p>
-                  <p style="margin: 0;">${{ item.total_price }}</p>
-                  <!-- ${{ item.price }} @  -->
-              </div>
-          </div>
-
-          <div class="cart-qty-control">
-
-            <div class="qty-control-card">
-
-                <form action="{% url 'cart:cart_add' product.id %}" method="post" class="update-qty">
-                  {{ item.update_quantity_form.quantity }}
-                  {{ item.update_quantity_form.override }}
-                  <input type=image src="{% static 'img/icons/addcircle.svg' %}" alt="Submit feedback">
-                  {% csrf_token %}
-                </form>
-
-            </div>
-
-              <div class="qty-control-card">
-                  <form action="{% url 'cart:cart_remove' product.id %}" method="post">
-                    <input type="image" src="{% static 'img/icons/delete.svg' %}" value="Remove" >
-                    {% csrf_token %}
-                  </form>
-              </div>
-
-   
-             
-  
-
-          </div>
-
-        </div>
-        
-      {% endwith %}
-  {% endfor %}
   <p class="text-right">
     <a href="{% url 'shop:product_list' %}" class="button
     light">Continue shopping</a>

@@ -332,13 +332,28 @@ form div.field {
     border-radius:4px;
 }
 
+@media screen and (max-width: 490px){
+    .for-cart {
+        flex-direction: column-reverse;
+    }
+    
+}
 
-.cart-item-container {
-    border: 1px solid red;
+.cart-item-card{
+    width: 100%;
+    /* border: 1px solid red; */
     /* height: 200px; */
+    background-color: white;
+    box-shadow: 1px 1px 5px #ddd9d9;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.cart-item-card:hover{
+
+    background-color: var(--lighter);
+
 }
 
 .cart-img-details {
