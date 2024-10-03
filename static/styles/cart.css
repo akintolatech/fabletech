@@ -360,8 +360,12 @@ form div.field {
     height: 100%;
 }
 
+.cart-item-details p {
+    margin: 0;
+}
+
 .cart-qty-control {
-    width: 100%;
+    /* width: 20%; */
     height: 40px;
     border: 1px solid red;
     display: flex;
@@ -378,9 +382,15 @@ form div.field {
 .update-qty {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     border: 1px solid red;
 }
 
 select {
     display: block;
+}
+
+.qty-control-card {
+    border: 1px solid red;
+    margin-inline: 4px;
 }

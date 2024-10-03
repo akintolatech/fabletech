@@ -7,6 +7,208 @@
 
 {% block content %}
 
+      <!-- section -->
+      <div class="section">
+        <h1>Products</h1>
+
+        <div class="shop-container">
+
+            <div class="aside-container">
+
+                <div class="search-box">
+                    <input type="search" placeholder="Search products" />
+                    <div class="icn-box">
+                        <img src="{% static 'img/icons/search.svg' %}" />
+                    </div>
+                </div>
+
+                <h4>Categories</h4>
+
+                <div class="user-profile">
+
+                    <!-- Categories -->
+                    <div class="user-func">
+                        <div class="icon-and-text">
+                            <div class="func-icon"><img src="{% static 'img/icons/terminal.svg' %}"></div>
+                            <h4>Computer accesories</h4>
+                        </div>
+                        <h4>(3)</h4>
+                    </div>
+
+                </div>
+
+                <!-- <div class="related-products-container">
+                    <h4>Best Deals</h4>
+
+                    <div class="user-func">
+                        <div class="icon-and-text">
+                            <div class="func-icon"><img src="../img/burger.png"></div>
+                            <h4>Small Chops</h4>
+                        </div>
+                        <h4>(3)</h4>
+                    </div>
+
+                    <div class="foodtab">
+
+                        <div class="foodimg">
+                            <img src="../img/shawarma.png"/>
+                        </div>
+                        <div class="foodtext">
+                            <h4>Chicken Sharwarma</h4>
+                            <p>$300</p>
+                        </div>
+
+                    </div>
+                    <div class="foodtab">
+
+                        <div class="foodimg">
+                            <img src="../img/shawarma.png"/>
+                        </div>
+                        <div class="foodtext">
+                            <h4>Chicken Sharwarma</h4>
+                            <p>$300</p>
+                        </div>
+
+                    </div>
+                </div> -->
+
+
+            </div>
+
+            <div class="container-of-containers">
+
+                <div class="container">
+
+                    <!-- Product Card -->
+                    <div class="product-card-box">
+
+                        <!-- Product image -->
+                        <div class="product-card-image">
+                            <img src="{% static 'img/h2.jpg' %}"/>
+                        </div>
+
+                        <!-- Product meta -->
+                        <div class="product-card-meta">
+
+                            <div class="product-card-price">
+                                <p>Dell Laptop</p>
+                                <h4>2000</h4>
+                            </div>
+
+                            <div class="product-qty-controls-container">
+
+                                <div class="product-qty-controls" >
+                                    <img src="{% static 'img/icons/remove.svg' %}" alt="">
+                                </div>
+
+                                <div class="product-card-box-qty">
+                                        <h6 class="qty">1</h6>
+                                </div>
+
+                                <div class="product-qty-controls" >
+                                    <img src="{% static 'img/icons/add.svg' %}" alt="">
+                                </div>
+
+                            </div>
+
+                            
+
+                        </div>
+
+                        <button class="product-btn">Order</button>
+
+                    </div>
+
+                    <!-- Product Card -->
+                    <div class="product-card-box">
+
+                        <!-- Product image -->
+                        <div class="product-card-image">
+                            <img src="{% static 'img/hp.jpg' %}"/>
+                        </div>
+
+                        <!-- Product meta -->
+                        <div class="product-card-meta">
+
+                            <div class="product-card-price">
+                                <p>Hp Laptop</p>
+                                <h4>2000</h4>
+                            </div>
+
+                            <div class="product-qty-controls-container">
+
+                                <div class="product-qty-controls" >
+                                    <img src="{% static 'img/icons/remove.svg' %}" alt="">
+                                </div>
+
+                                <div class="product-card-box-qty">
+                                        <h6 class="qty">1</h6>
+                                </div>
+
+                                <div class="product-qty-controls" >
+                                    <img src="{% static 'img/icons/add.svg' %}" alt="">
+                                </div>
+
+                            </div>
+
+                            
+
+                        </div>
+
+                        <button class="product-btn">Order</button>
+
+                    </div>
+
+
+                    <!-- Product Card -->
+                    <div class="product-card-box">
+
+                        <!-- Product image -->
+                        <div class="product-card-image">
+                            <img src="{% static 'img/bat.png' %}"/>
+                        </div>
+
+                        <!-- Product meta -->
+                        <div class="product-card-meta">
+
+                            <div class="product-card-price">
+                                <p>Inverter Battery</p>
+                                <h4>2000</h4>
+                            </div>
+
+                            <div class="product-qty-controls-container">
+
+                                <div class="product-qty-controls" >
+                                    <img src="{% static 'img/icons/remove.svg' %}" alt="">
+                                </div>
+
+                                <div class="product-card-box-qty">
+                                        <h6 class="qty">1</h6>
+                                </div>
+
+                                <div class="product-qty-controls" >
+                                    <img src="{% static 'img/icons/add.svg' %}" alt="">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <button class="product-btn">Order</button>
+
+                    </div>
+
+  
+
+ 
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
 
   <h1>
     
@@ -24,7 +226,7 @@
 
   </h1>
 
-  <table class="cart">
+  <!-- <table class="cart">
     <thead>
       <tr>
         <th>Image</th>
@@ -71,7 +273,7 @@
         <td class="num">${{ cart.get_total_price }}</td>
       </tr>
     </tbody>
-  </table>
+  </table> -->
 
   {% for item in cart %}
       {% with product=item.product %}
@@ -89,24 +291,37 @@
               
               <div class="cart-item-details">
                   <p>{{ product.name }}</p>
-                  <p>${{ item.price }} @ ${{ item.total_price }}</p>
+                  <p style="margin: 0;">${{ item.total_price }}</p>
+                  <!-- ${{ item.price }} @  -->
               </div>
           </div>
 
           <div class="cart-qty-control">
-            
-              <form action="{% url 'cart:cart_remove' product.id %}" method="post">
-                <input type="submit" value="Remove" style="width: 80px;">
-                {% csrf_token %}
-              </form>
 
-              <form action="{% url 'cart:cart_add' product.id %}" method="post">
-                {{ item.update_quantity_form.quantity }}
-                {{ item.update_quantity_form.override }}
-                <input type="submit" value="Update" style="width: 80px;">
-                {% csrf_token %}
-              </form>
+            <div class="qty-control-card">
+
+                <form action="{% url 'cart:cart_add' product.id %}" method="post" class="update-qty">
+                  {{ item.update_quantity_form.quantity }}
+                  {{ item.update_quantity_form.override }}
+                  <input type=image src="{% static 'img/icons/addcircle.svg' %}" alt="Submit feedback">
+                  {% csrf_token %}
+                </form>
+
+            </div>
+
+              <div class="qty-control-card">
+                  <form action="{% url 'cart:cart_remove' product.id %}" method="post">
+                    <input type="image" src="{% static 'img/icons/delete.svg' %}" value="Remove" >
+                    {% csrf_token %}
+                  </form>
+              </div>
+
+   
+             
+  
+
           </div>
+
         </div>
         
       {% endwith %}
