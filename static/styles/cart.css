@@ -30,7 +30,7 @@ a.button, input[type="submit"] {
 
 
 
-
+/* 
 a.button.light {
     color:#666;
     background:#ededed;
@@ -86,7 +86,7 @@ tbody td.num {
 td input[type="submit"] {
     font-size:12px;
     padding:4px 10px;
-}
+} */
 
 /* form p label, form p input {
     float:left;
@@ -219,11 +219,12 @@ ul.errorlist {
 .product-detail h1 {
     margin-bottom:0;
 }
-
+/* 
 .product-detail h2 {
     margin-top:10px;
-}
+} */
 
+/* 
 .order-form {
     float:left;
 }
@@ -316,7 +317,7 @@ ul.errorlist {
 
 .recommendations.cart img {
     width:120px;
-}
+} */
 
 /* braintree hosted fields */
 form div.field {
@@ -343,8 +344,12 @@ form div.field {
     width: 100%;
     /* border: 1px solid red; */
     /* height: 200px; */
+    padding: 10px;
+    margin-bottom:  12px;
+    box-sizing: border-box;
     background-color: white;
     box-shadow: 1px 1px 5px #ddd9d9;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -365,7 +370,7 @@ form div.field {
 .cart-item-img-box {
     width: 80px;
     height: 80px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     margin-right: 24px;
 }
 
@@ -382,7 +387,7 @@ form div.field {
 .cart-qty-control {
     /* width: 20%; */
     height: 40px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -398,7 +403,7 @@ form div.field {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 select {
@@ -406,6 +411,6 @@ select {
 }
 
 .qty-control-card {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     margin-inline: 4px;
 }

@@ -4,7 +4,7 @@
   /* justify-content: space-between;
   border: 1px solid #fb1f4c;
   display: flex; */
-  border: 1px solid #fb1f4c;
+  /* border: 1px solid #fb1f4c; */
 }
 
 .container-of-containers {
@@ -228,7 +228,13 @@ input[type="search"] {
 
     .aside-container {
       width: 23%;
-      border-radius: 20px;
+      /* border-radius: 20px; */
+    }
+
+    .aside-container-for-cart {
+      width: 40%;
+      /* border: 1px solid red; */
+      margin-left: 24px;
     }
 
     .product-container{
