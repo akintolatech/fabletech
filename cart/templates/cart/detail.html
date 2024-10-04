@@ -111,13 +111,19 @@
                     {% endfor %}
                   </ol>
                   <p>Total: ${{ cart.get_total_price }}</p>
-                  <p>
-                    <a href="{% url 'shop:product_list' %}" class="button
-                    light">Continue shopping</a>
+
+                    <form method="post" class="order-form">
+                      {{ form.as_p }}
+                      <p><input type="submit" value="Place order"></p>
+                      {% csrf_token %}
+                    </form>
+
+                    <a href="{% url 'shop:product_list' %}">
+                        <button>Continue shopping</button>
+                    </a>
                 
-                  </p>
-                
-                  <a href="{% url 'orders:order_create' %}" >Checkout</a>
+<!--                    <a href="{% url 'orders:order_create' %}" >Checkout</a>-->
+
                 </div>
 
                 
