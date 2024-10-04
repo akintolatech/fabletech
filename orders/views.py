@@ -5,7 +5,7 @@ from .forms import OrderCreateForm
 from .models import OrderItem
 # from .tasks import order_created
 
-
+# create order view
 def order_create(request):
     cart = Cart(request)
     if request.method == 'POST':
