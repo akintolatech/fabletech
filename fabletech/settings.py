@@ -90,6 +90,7 @@ TEMPLATES = [
                 'webcms.context_processors.web_details',
                 'cart.context_processors.cart',
                 'orders.context_processors.order_form',
+                'shop.context_processors.product_list',
             ],
         },
     },

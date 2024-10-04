@@ -40,17 +40,7 @@
                         <button>
                             <img src="{% static 'img/icons/carticon.svg' %}" />
                             <p>
-                                Cart(
-                                    {% with total_items=cart|length %}
-                                    {% if total_items > 0 %}
-
-                                        {{ total_items }} 
-                    
-                                    {% elif not order %}
-                                        0
-                                    {% endif %}
-                                    {% endwith %}
-                                )
+                                Cart({% with total_items=cart|length %}{% if total_items > 0 %}{{ total_items }}{% elif not order %}0{% endif %}{% endwith %})
                             </p>
                         </button>
                     </a>

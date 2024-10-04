@@ -19,7 +19,7 @@
             Your shopping cart
             <a href="{% url 'cart:cart_detail' %}">
               {{ total_items }} item{{ total_items|pluralize }},
-              ${{ cart.get_total_price }}
+              &#x20A6 {{ cart.get_total_price }}
             </a>  
           </h1>
  
@@ -29,61 +29,65 @@
 
             <div class="container-of-containers">
 
-                  <div class="cart-item-container">
+                <div class="cart-item-container">
 
-                    {% for item in cart %}
-                      {% with product=item.product %}
-                
-                        <div class="cart-item-card">
-                
-                          <div class="cart-img-details">
-                
-                              <div class="cart-item-img-box">
-                                  <a href="{{ product.get_absolute_url }}">
-                                    <img src="{% if product.image %}{{ product.image.url }}
-                                    {% else %}{% static 'img/no_image.png' %}{% endif %}">
-                                  </a>
-                              </div>
-                              
-                              <div class="cart-item-details">
-                                  <p>{{ product.name }}</p>
-                                  <p style="margin: 0;">${{ item.total_price }}</p>
-                                  <!-- ${{ item.price }} @  -->
-                              </div>
+                {% for item in cart %}
+                  {% with product=item.product %}
+
+                    <div class="cart-item-card">
+
+                      <div class="cart-img-details">
+
+                          <div class="cart-item-img-box">
+                              <a href="{{ product.get_absolute_url }}">
+                                <img src="{% if product.image %}{{ product.image.url }}
+                                {% else %}{% static 'img/no_image.png' %}{% endif %}">
+                              </a>
                           </div>
-                
-                          <div class="cart-qty-control">
-                
-                            <div class="qty-control-card">
-                
-                                <form action="{% url 'cart:cart_add' product.id %}" method="post" class="update-qty">
-                                  {{ item.update_quantity_form.quantity }}
-                                  {{ item.update_quantity_form.override }}
-                                  <input type=image src="{% static 'img/icons/addcircle.svg' %}" alt="Submit feedback">
-                                  {% csrf_token %}
-                                </form>
-                
-                            </div>
-                
-                            <div class="qty-control-card">
-                                <form action="{% url 'cart:cart_remove' product.id %}" method="post">
-                                  <input type="image" src="{% static 'img/icons/delete.svg' %}" value="Remove" >
-                                  {% csrf_token %}
-                                </form>
-                            </div>
-                
+
+                          <div class="cart-item-details">
+                              <p>{{ product.name }}</p>
+                              <p style="margin: 0;"> &#x20A6 {{ item.total_price }}</p>
+                              <!-- ${{ item.price }} @  -->
                           </div>
-                
+                      </div>
+
+                      <div class="cart-qty-control">
+
+                        <div class="qty-control-card">
+
+                            <form action="{% url 'cart:cart_add' product.id %}" method="post" class="update-qty">
+                              {{ item.update_quantity_form.quantity }}
+                              {{ item.update_quantity_form.override }}
+                              <input type=image src="{% static 'img/icons/addcircle.svg' %}" alt="Submit feedback">
+                              {% csrf_token %}
+                            </form>
+
                         </div>
-                        
-                      {% endwith %}
-                    {% endfor %}
-    
-                  </div>
+
+                        <div class="qty-control-card">
+                            <form action="{% url 'cart:cart_remove' product.id %}" method="post">
+                              <input type="image" src="{% static 'img/icons/delete.svg' %}" value="Remove" >
+                              {% csrf_token %}
+                            </form>
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  {% endwith %}
+                {% endfor %}
+
+                </div>
+
+                <a href="{% url 'shop:product_list' %}" >
+                    <button style="width:180px; height:44px; margin-bottom:12px;">Continue shopping</button>
+                </a>
 
             </div>
 
-            <div class="aside-container aside-container-for-cart">
+            <div class="aside-container aside-container-for-cart" >
 
                 <!-- <h4>Categories</h4> -->
 
@@ -106,23 +110,19 @@
                     {% for item in cart %}
                       <li>
                         {{ item.quantity }}x {{ item.product.name }}
-                        <span>${{ item.total_price }}</span>
+                        <span> &#x20A6 {{ item.total_price }}</span>
                       </li>
                     {% endfor %}
                   </ol>
-                  <p>Total: ${{ cart.get_total_price }}</p>
+                  <h4>Total: &#x20A6 {{ cart.get_total_price }}</h4>
 
-                    <form method="post" class="order-form">
-                      {{ form.as_p }}
-                      <p><input type="submit" value="Place order"></p>
-                      {% csrf_token %}
-                    </form>
+                  <form method="post" action= "{% url 'orders:order_create' %}">
+                    {{ form.as_p }}
+                    <p><input type="submit" value="Place order"></p>
+                    {% csrf_token %}
+                  </form>
 
-                    <a href="{% url 'shop:product_list' %}">
-                        <button>Continue shopping</button>
-                    </a>
-                
-<!--                    <a href="{% url 'orders:order_create' %}" >Checkout</a>-->
+                   <!-- <a href="{% url 'orders:order_create' %}" >Checkout</a> -->
 
                 </div>
 
@@ -140,11 +140,9 @@
               <div class="message-container-image-box">
                 <img src="{% static 'img/none.png' %}" width="320px"/>
               </div>
-              <p class="text-right">
-                <a href="{% url 'shop:product_list' %}" class="button
-                light">Continue shopping</a>
-            
-              </p>
+              <a href="{% url 'shop:product_list' %}" >
+                <button style="width:180px; height:44px; margin-bottom:12px;">Continue shopping</button>
+            </a>
             </center>
             
           </div>
@@ -157,9 +155,5 @@
    
 
     </div>
-
-
-
-
 
 {% endblock %}
