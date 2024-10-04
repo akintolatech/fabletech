@@ -200,6 +200,24 @@ input[type="search"] {
 }
 
 
+.cart-summary-box {
+  /* border: 1px solid red; */
+  background-color: white;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.cart-summary-box ol{
+  padding-left: 14px ;
+}
+
+.cart-summary-box ol li{
+  margin-block: 12px;
+
+}
+
+
+
 
 /* Product Container */
 .product-container{
