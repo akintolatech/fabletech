@@ -14,3 +14,11 @@ class WebDetails (models.Model):
 
     def __str__(self):
         return self.name_of_business
+
+class Testimonial (models.Model):
+    client_photo = models.ImageField(upload_to="testimonials", blank=True, null=True)
+    client_name = models.CharField(max_length=33)
+    testimonial_text = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.client_name

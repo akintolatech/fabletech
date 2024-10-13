@@ -11,6 +11,12 @@ body {
     background-color: whitesmoke;
 }
 
+img {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--radius);
+}
+
 a {
     text-decoration: none;
     color: var(--dark);
@@ -482,9 +488,6 @@ button {
     /* border: 1px solid red; */
     border-radius: var(--radius);
     background-color: white;
-    box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.038);
-    border-image: fill 0 linear-gradient(#0001, var(--dark));
-
 }
 
 .project {
@@ -496,20 +499,20 @@ button {
 }
 
 .project2 {
-    height: 400px;
+    height: 420px;
     /* padding-top: 320px; */
     /* border: 1px solid red; */
     /* background-image: url("../img/amp.jpg"); */
     /* background-repeat: no-repeat; */
-    color: white;
+    color: var(--dark);
     padding: 0;
 }
 
 .project2 img {
-    width: 100%;
-    height: 100%;
-    border-radius: var(--radius);  
+    box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.038);
+
 }
+
 
 .product-item-content {
     margin-top: -200px;
@@ -592,7 +595,6 @@ button {
     border-radius: 10px;
     box-sizing: border-box;
     box-shadow: 1px 1px 2px var(--shadow-color);
-    cursor: pointer;
     transition: all ease var(--speed);
     display: flex;
     flex-direction: column;
@@ -631,12 +633,12 @@ button {
     justify-content: center;
 }
 
-.test-img {
+.test-img img{
     width: 100%;
     height: 100%;
     border-radius: 50%;
     /* border: 1px solid red; */
-    background-image: url("../img/Aisha\ -\ thumb.jpg");
+    /* background-image: url("../img/Aisha\ -\ thumb.jpg");*/
     background-size: cover;
 
 }

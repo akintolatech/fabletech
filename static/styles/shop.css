@@ -228,6 +228,15 @@ input[type="search"] {
   /* border: 1px solid red; */
 }
 
+.product-index-container{
+  /* width: 90%; */
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 12px;
+  row-gap: 12px;
+  /* border: 1px solid red; */
+}
+
+
 
 
 
@@ -256,8 +265,12 @@ input[type="search"] {
     }
 
     .product-container{
-      display: grid;   
-  }
+          display: grid;
+    }
+    .product-index-container{
+          display: grid;
+    }
+
 }
 
 

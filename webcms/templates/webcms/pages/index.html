@@ -74,37 +74,23 @@
 
         <div class="container">
 
+            {% for new_product in new_products %}
+
             <div class="item project2">
 
-                <img src="{% static 'img/streetlight.png' %}" />
+                <img src="{% if new_product.image %}{{ new_product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" />
                 <div class="product-item-content">
-                    <h3>Solar Streetlamps</h3>
-                    <p>Durable street lamps</p>
-                    <button>Order</button>
+                    <h3>{{ new_product.name }}</h3>
+                    <p>{{ new_product.price }}</p>
+                     <a href="{{ new_product.get_absolute_url }}">
+                         <button>Order</button>
+                     </a>
                 </div>
 
             </div>
 
-            <div class="item project2">
+            {% endfor %}
 
-                <img src="{% static 'img/streetlight.png' %}" />
-                <div class="product-item-content">
-                    <h3>Solar Streetlamps</h3>
-                    <p>Durable street lamps</p>
-                    <button>Order</button>
-                </div>
-
-            </div>
-
-            <div class="item project2">
-                <img src="{% static 'img/streetlight.png' %}" />
-                <div class="product-item-content">
-                    <h3>Solar Streetlamps</h3>
-                    <p>Durable street lamps</p>
-                    <button>Order</button>
-                </div>
-
-            </div>
 
         </div>
 
@@ -140,40 +126,40 @@
 
         <h1>Shop</h1>
 
-        <div class="container">
-            {% for product in products %}
-            <!-- Product Card -->
-            <div class="product-card-box">
+                <div class="product-index-container">
+                    {% for product in products %}
+                    <!-- Product Card -->
+                    <div class="product-card-box">
 
-                <!-- Product image -->
-                <div class="product-card-image-box">
-                    <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}"/>
-                </div>
+                        <!-- Product image -->
+                        <div class="product-card-image-box">
+                            <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}"/>
+                        </div>
 
-                <!-- Product meta -->
-                <div class="product-card-meta">
+                        <!-- Product meta -->
+                        <div class="product-card-meta">
 
-                    <div class="product-card-price">
-                        <p>{{ product.name |truncatewords:5|linebreaks }}</p>
-                        <h4>${{ product.price }}</h4>
-                    </div>
-
-                    <div class="product-qty-controls-container">
-
-                        <a href="{{ product.get_absolute_url }}">
-                            <div class="product-qty-controls" >
-                                <img src="{% static 'img/icons/add_to_cart.svg' %}" alt="">
+                            <div class="product-card-price">
+                                <p>{{ product.name |truncatewords:5|linebreaks }}</p>
+                                <h4>${{ product.price }}</h4>
                             </div>
-                        </a>
+
+                            <div class="product-qty-controls-container">
+
+                                <a href="{{ product.get_absolute_url }}">
+                                    <div class="product-qty-controls" >
+                                        <img src="{% static 'img/icons/add_to_cart.svg' %}" alt="">
+                                    </div>
+                                </a>
+
+                            </div>
+
+                        </div>
 
                     </div>
 
+                    {% endfor %}
                 </div>
-
-            </div>
-
-            {% endfor %}
-        </div>
 
     </div>
 
@@ -221,44 +207,20 @@
 
         <div class="test-container">
 
-
+            {% for testimonial in testimonials %}
             <div class="tab">
                 <center>
                 <div class="test-img-box">
                     <div class="test-img">
-
+                        <img src="{% if testimonial.client_photo %}{{ testimonial.client_photo.url }} {% else %} {% static 'img/user.jpg' %} {% endif %}" />
                     </div>
                 </div>
-                <h3>Bose Oluyede</h3>
-                <p>Dedicated to crafting custom-made furniture wih sustainble materials</p>
+                <h3>{{ testimonial.client_name }}</h3>
+                <p>{{ testimonial.testimonial_text }}</p>
                 </center>
             </div>
+            {% endfor %}
 
-            <div class="tab">
-                <center>
-                    <div class="test-img-box">
-                        <div class="test-img">
-
-                        </div>
-                    </div>
-                    <h3>Abiola Joseph</h3>
-                    <p>
-                        Well deliver unparalleled expertise and innovation in all your projects.
-                    </p>
-                </center>
-            </div>
-
-            <div class="tab">
-                <center>
-                <div class="test-img-box">
-                    <div class="test-img">
-
-                    </div>
-                </div>
-                <h3>Aisha Dadda</h3>
-                <p>you cater to both residential and commercial clients. </p>
-                </center>
-            </div>
 
         </div>
 
