@@ -22,6 +22,44 @@
         </div>
 
     </div>
+
+    <div class="carousel-container">
+
+        <div class="carousel">
+
+          <div class="item active">
+            <img src="{% static 'img/landing.jpg' %}" alt="Image 1" />
+            <div class="text">
+                <h1>Powering Your Life<br/>Empowering Your Future</h1>
+                <p>
+                    Affordable energy solutions, reliable computer systems, 
+                    and cutting-edge software development to drive your success.
+                </p>
+                <button>Order Now!</button>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="{% static 'img/landing.png' %}" alt="Image 1" />
+            <p class="caption">Caption for Image 2</p>
+          </div>
+
+          <div class="item">
+            <img src="{% static 'img/contact.jpg' %}" alt="Image 1" />
+            <p class="caption">Caption for Image 3</p>
+          </div>
+
+        </div>
+
+        <button class="btn prev">Prev</button>
+        <button class="btn next">Next</button>
+
+        <div class="dots"></div>
+
+    </div>
+
+
+
 {% endblock %}
 
 {% block content %}
@@ -81,7 +119,7 @@
                 <img src="{% if new_product.image %}{{ new_product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" />
                 <div class="product-item-content">
                     <h3>{{ new_product.name }}</h3>
-                    <p>{{ new_product.price }}</p>
+                    <p>&#x20A6 {{ new_product.price }}</p>
                      <a href="{{ new_product.get_absolute_url }}">
                          <button>Order</button>
                      </a>
@@ -141,7 +179,7 @@
 
                             <div class="product-card-price">
                                 <p>{{ product.name |truncatewords:5|linebreaks }}</p>
-                                <h4>${{ product.price }}</h4>
+                                <h4> &#x20A6 {{ product.price }}</h4>
                             </div>
 
                             <div class="product-qty-controls-container">
