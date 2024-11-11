@@ -349,13 +349,13 @@ svg {
         cursor: pointer;
         height: 10px;
         width: 10px;
-        background-color: #242421;
+        background-color: var(--dark);
         transition: background-color 0.2s ease;
         border-radius: 50%;
   
         &.active,
         &:hover {
-          background-color: #ffffe6;
+          background-color: var(--light);
         }
       }
     }
