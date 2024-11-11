@@ -249,12 +249,12 @@ svg {
 
 /* Landing Slider styles */
 .carousel-container {
-    width: 80%;
+    width: 90%;
     margin: auto;
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: var(--lx-gap);
+    /* gap: var(--lx-gap); */
     border: 1px solid red;
   
     .carousel {
@@ -262,9 +262,9 @@ svg {
       width: 100%;
       height: 510px;
       position: relative;
-      overflow: hidden;
+      /* overflow: hidden; */
   
-      .item {
+      .carousel_item {
         opacity: 0;
         width: 100%;
         height: 100%;
@@ -297,6 +297,7 @@ svg {
     }
   
     .btn {
+        width: 54px;
       padding: 1em 2em;
       position: absolute;
       transform: translateY(-50%);
@@ -310,7 +311,7 @@ svg {
       color: white;
       background-color: var(--dark);
       transition: transform 0.2s ease-in-out;
-  
+        padding: 0;
       &:active,
       &:focus {
         transform: translateY(-50%) scale(0.9);
@@ -412,10 +413,11 @@ svg {
 
 .text {
     
-    margin: 20px;
-    margin-top: 150px;
+    /* margin: 20px; */
+    /* margin-top: -150px; */
     color: var(--dark);
     transition: all 0.2s cubic-bezier(0.77,0.2,0.05,1.0);
+    border: 1px solid red;
 }
 
 .text p {
@@ -435,23 +437,23 @@ button {
 
 /* for large screens */
 @media screen and (min-width: 760px){
-
+/* 
     .landing {
-        /* width: fit-content; */
-        /* border: 1px solid red; */
-        /* margin: auto; */
+        width: fit-content;
+        border: 1px solid red;
+        margin: auto;
         overflow: hidden;
-    }
+    } */
 
-    .landing video {
-        /* position: relative; */
+    /* .landing video {
+        position: relative;
         width: 100%;
-    }
+    } */
 
     .text {
         width: 50%;
-        margin: 50px;
-        margin-top: 150px;
+        /* margin: 50px; */
+        margin-top: -350px;
         
     }
 }

@@ -22,3 +22,11 @@ class Testimonial (models.Model):
 
     def __str__(self):
         return self.client_name
+
+class LandingContent(models.Model):
+    landing_image = models.ImageField(upload_to="landing_images")
+    landing_title = models.CharField(max_length=100)
+    landing_caption = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.landing_title

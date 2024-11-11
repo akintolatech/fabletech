@@ -8,6 +8,7 @@
 
 {% block landing %}
     <div class="landing" id="shop-landing">
+
         <!-- <video src="media/vid.mp4"
                autoplay="true">
         </video> -->
@@ -61,7 +62,7 @@
                     <a href="{{ c.get_absolute_url }}">
                         <div class="user-func">
                             <div class="icon-and-text" {% if category.slug == c.slug %}class="selected"{% endif %} >
-                                <div class="func-icon"><img src="{% static 'img/icons/terminal.svg' %}"></div>
+                                <div class="func-icon"><img src=" {% if c.icon %} {{c.icon.url }} {% else %} {% static 'img/icons/terminal.svg' %} {% endif %}" ></div>
                                 <h4>{{ c.name }}</h4>
                             </div>
                             <h4>(3)</h4>

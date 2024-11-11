@@ -23,7 +23,7 @@ $(document).ready(
 // Slider 
 document.addEventListener("DOMContentLoaded", function () {
     let carousel = document.querySelector(".carousel");
-    let items = carousel.querySelectorAll(".item");
+    let items = carousel.querySelectorAll(".carousel_item");
     let dotsContainer = document.querySelector(".dots");
   
     // Insert dots into the DOM
