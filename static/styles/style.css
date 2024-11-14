@@ -306,7 +306,8 @@ svg {
     }
   
     .carousel_btn {
-        width: 54px;
+        
+      width: 54px;
       padding: 1em 2em;
       position: absolute;
       transform: translateY(-50%);
@@ -320,7 +321,9 @@ svg {
       color: white;
       background-color: var(--dark);
       transition: transform 0.2s ease-in-out;
-        padding: 0;
+      padding: 0;
+
+
       &:active,
       &:focus {
         transform: translateY(-50%) scale(0.9);

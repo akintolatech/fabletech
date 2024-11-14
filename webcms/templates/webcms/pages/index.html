@@ -59,6 +59,7 @@
                     and cutting-edge software development to drive your success.
                 </p>
                 <button>Order Now!</button>
+        
             </div>
             
           </div>
@@ -79,13 +80,14 @@
 
         </div>
 
-       
-
+        <div>
+            <button class="carousel_btn prev"> <img src="{% static 'img/back.svg' %}"  alt="prev button" /> </button>
+            <button class="carousel_btn next"><img src="{% static 'img/back.svg' %}" alt="next button"/> </button>
+        </div>
+        
         <div class="dots"></div>
 
     </div>
-    <button class="carousel_btn prev"> <img src="{% static 'img/back.svg' %}"  alt="prev button" /> </button>
-    <button class="carousel_btn next"><img src="{% static 'img/back.svg' %}" alt="next button"/> </button>
 
 
 {% endblock %}
