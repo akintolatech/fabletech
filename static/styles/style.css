@@ -255,7 +255,7 @@ svg {
     display: flex;
     flex-direction: column;
     gap: var(--lx-gap);
-    border: 1px solid red;
+    /* border: 1px solid red; */
     overflow: hidden;
 }
 
@@ -281,6 +281,7 @@ svg {
     height: 100%;
     /* object-fit: cover;
     object-position: center; */
+
 }
 
 .carousel_item.active {
@@ -291,14 +292,14 @@ svg {
 }
 
 
-
 .landing_text {
-    
-    /* margin: 20px; */
-    margin-top: -350px;
-    color: var(--dark);
+    padding: 12px;
+    margin-top: -420px;
+    color: var(--light);
+    background-color: var(--lighter);
     transition: all 0.2s cubic-bezier(0.77,0.2,0.05,1.0);
     border: 1px solid red;
+    /* background: -moz-linear-gradient(); */
 }
 
 .landing_text p {
