@@ -247,12 +247,6 @@ svg {
 }
 
 
-
-
-
-/* Landing Carousel styles */
-
-
 /* Landing Carousel styles */
 .carousel-container {
     /* width: 100%; */
@@ -260,14 +254,16 @@ svg {
     position: relative;
     display: flex;
     flex-direction: column;
-    /* gap: var(--lx-gap); */
+    gap: var(--lx-gap);
     border: 1px solid red;
+    overflow: hidden;
 }
 
 .carousel {
     /* aspect-ratio: 1; */
     width: 100%;
-    height: 80dvh;
+    /* height: 80dvh; */
+    height: 510px;
     position: relative;
     /* overflow: hidden; */
 }
@@ -282,33 +278,10 @@ svg {
 
 .carousel_item img {
     /* width: 100%; */
-    /* height: 100%; */
-    object-fit: cover;
-    object-position: center;
+    height: 100%;
+    /* object-fit: cover;
+    object-position: center; */
 }
-
-
-/* For large screens: Progressive enhancement */
-@media screen and (min-width:760px) {
-    .carousel {
-        aspect-ratio: 16/9;
-        width: 100%;
-        /* height: 510px; */
-        height: 80dvh;
-        position: relative;
-        /* overflow: hidden; */
-    }
-
-    .carousel_item img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-    }
-    
-}
-
-
 
 .carousel_item.active {
     opacity: 1;
@@ -317,6 +290,20 @@ svg {
     /* place-items: center; */
 }
 
+
+
+.landing_text {
+    
+    /* margin: 20px; */
+    margin-top: -350px;
+    color: var(--dark);
+    transition: all 0.2s cubic-bezier(0.77,0.2,0.05,1.0);
+    border: 1px solid red;
+}
+
+.landing_text p {
+    line-height: 1.5rem;
+}
 
 .carousel_btn_container {
     
@@ -385,6 +372,27 @@ svg {
 }
 
 
+/* For large screens: Progressive enhancement */
+@media screen and (min-width:760px) {
+    .carousel {
+        /* aspect-ratio: 16/9; */
+        width: 100%;
+        /* height: 510px; */
+        /* height: 80dvh; */
+        /* position: relative; */
+        /* overflow: hidden; */
+    }
+
+    .carousel_item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+    
+}
+
+
 /* landing */
 .landing {
     /* max-width: 100%; */
@@ -425,18 +433,7 @@ svg {
     position: relative;
 } */
 
-.text {
-    
-    /* margin: 20px; */
-    /* margin-top: -150px; */
-    color: var(--dark);
-    transition: all 0.2s cubic-bezier(0.77,0.2,0.05,1.0);
-    border: 1px solid red;
-}
 
-.text p {
-    line-height: 1.5rem;
-}
 
 button {
     width: 220px;
@@ -648,6 +645,7 @@ button {
 }
 
 .project2 img {
+    width: 100%;
     box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.038);
 
 }
