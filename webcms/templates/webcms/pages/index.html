@@ -46,22 +46,25 @@
 
             </div>
 
-            <div class="carousel_item active">
+            {% for content in landing %}
 
-                <img src="{% static 'img/landing.jpg' %}" alt="Image 1" />
+            <div class="carousel_item">
+
+                <img src="{{ content.landing_image.url }}" alt="Image 1" />
 
                 <div class="landing_text">
 
-                    <h1>Second<br/>Empowering Your Future</h1>
+                    <h1>{{ content.landing_title }}</h1>
                     <p>
-                        Affordable energy solutions, reliable computer systems,
-                        and cutting-edge software development to drive your success.
+                        {{ content.landing_caption  }}
                     </p>
-                    <button>Order Now!</button>
+                    <button>{{ content.landing_btn_text }}</button>
 
                 </div>
 
             </div>
+
+            {% endfor %}
           
 
         </div>

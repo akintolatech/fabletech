@@ -475,7 +475,7 @@ button {
 
 /* main section */
 #main {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     /* height: 300px; */
     width: 92%;
     margin: auto;

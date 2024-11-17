@@ -122,14 +122,14 @@
                     <a href="{% url 'website:index' %}"><li>Home</li></a>
                     <a href="{% url 'shop:product_list'%}"><li>Shop</li></a>
                     <a href="{% url 'website:about' %}"><li>About</li></a>
-                    <a href="{% url 'website:about' %}"><li>Login to Account</li></a>
-                    <a href="{% url 'website:about' %}"><li>Register for Free</li></a>
+                    <a href="{% url 'login' %}"><li>Login to Account</li></a>
+                    <a href="{% url 'register' %}"><li>Register for Free</li></a>
                 </ul>
 
                 <ul>
                     <li class="footer-heading">Order</li>
-                    <a href="index.html"><li>Cart</li></a>
-                    <a href="#"><li>My Wishlist</li></a>
+                    <a href="{% url 'cart:cart_detail' %}"><li>Cart</li></a>
+                    <!-- <a href="#"><li>My Wishlist</li></a> -->
                     <a href="#"><li>Track Order</li></a>
                     <a href="#"><li>Privacy Policy</li></a>
                     <a href="#"><li>Terms and Conditions</li></a>
@@ -137,9 +137,9 @@
 
                 <ul>
                     <li class="footer-heading">Reach Out</li>
-                    <a href="index.html"><li>Call</li></a>
-                    <a href="pages/about.html"><li>Whatsapp Message</li></a>
-                    <a href="pages/services.html"><li>Email</li></a>
+                    <a href="tel:{{ business.phone_of_business }}"><li>Call</li></a>
+                    <a href="#"><li>Whatsapp Message</li></a>
+                    <a href="tel:{{ business.email_of_business }}"><li>Email</li></a>
                 </ul>
 
             </div>
