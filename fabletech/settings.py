@@ -61,6 +61,7 @@ INSTALLED_APPS = [
     'cart.apps.CartConfig',
     'webcms.apps.WebcmsConfig',
     'shop.apps.ShopConfig',
+    "administration.apps.AdministrationConfig"
 ]
 
 MIDDLEWARE = [
