@@ -27,7 +27,6 @@ a {
 }
 
 
-
 .ham-nav {
 
     float: right;
@@ -112,8 +111,8 @@ a {
 }
 
 .icn-box {
-    width: 37px;
-    height: 37px;
+    width: 48px;
+    height: 48px;
 }
 
 .small {
@@ -154,7 +153,7 @@ a {
     /* border: 1px solid red; */
     height: 145px;
     background-color: white;
-    margin-bottom: 24px;
+    margin-bottom: 34px;
     border-radius: var(--rad);
     padding: 30px;
     box-sizing: border-box;
@@ -165,6 +164,30 @@ a {
     color: #707070;
 }
 
+.dashboard-analytics {
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid red; */
+}
+
+.chartbox {
+    background-color: white;
+    width: 65.6%;
+    /* height: 660px; */
+    padding: 30px;
+    box-sizing: border-box;
+    /* border: 1px solid red; */
+    border-radius: var(--rad);
+}
+.list-box {
+    width: 31.5%;
+    background-color: white;
+    /* height: 100%; */
+    /* margin-block: 24px; */
+    padding-inline: 30px;
+    box-sizing: border-box;
+    border-radius: var(--rad);
+}
 
 .logs-container {
     width: 100%;
@@ -234,23 +257,23 @@ a {
     /* color: #fff7ff1f; */
 }
 
- /* The switch - the box around the slider */
- .switch {
+/* The switch - the box around the slider */
+.switch {
     position: relative;
     display: inline-block;
     width: 60px;
     height: 34px;
-    }
+}
 
-    /* Hide default HTML checkbox */
-    .switch input {
+/* Hide default HTML checkbox */
+.switch input {
     opacity: 0;
     width: 0;
     height: 0;
-    }
+}
 
-    /* The slider */
-    .slider {
+/* The slider */
+.slider {
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -260,9 +283,9 @@ a {
     background-color: #ccc;
     -webkit-transition: .4s;
     transition: .4s;
-    }
+}
 
-    .slider:before {
+.slider:before {
     position: absolute;
     content: "";
     height: 26px;
@@ -272,27 +295,123 @@ a {
     background-color: white;
     -webkit-transition: .4s;
     transition: .4s;
-    }
+}
 
-    input:checked + .slider {
-    background-color: #22FF00;
-    }
+input:checked + .slider {
+background-color: #22FF00;
+}
 
-    input:focus + .slider {
-    box-shadow: 0 0 1px #22FF00;
-    }
+input:focus + .slider {
+box-shadow: 0 0 1px #22FF00;
+}
 
-    input:checked + .slider:before {
+input:checked + .slider:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
-    }
+}
 
-    /* Rounded sliders */
-    .slider.round {
+/* Rounded sliders */
+.slider.round {
     border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+/* Popover container component styles */
+.popover-container {
+    position: relative;
+}
+
+.popover-item {
+    position: absolute;
+    top:0;
+    width: 100%;
+    height: 600px;
+    background-color: var(--lighter);
+    /* border: 1px solid red; */
+    border-radius: var(--rad);
+    display: none;
+    padding-block: 30px;
+    box-sizing: border-box;
+    /* opacity: .75; */
+    /* Standard style for transparency */
+    /* filter: alpha(opacity=75); Transparency for IE */
+}
+
+/* .open {
+    display: block;
+} */
+
+
+
+.gen-container {
+    width: 768px;
+    margin: auto;
+    /* border: 1px solid greenyellow; */
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.gen-item {
+    width: 49%;
+    /* border: 1px solid greenyellow; */
+}
+
+.gen-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media screen  and (max-width:768px) {
+    .gen-container {
+        flex-direction: column;
     }
 
-    .slider.round:before {
-    border-radius: 50%;
+    .gen-item {
+        width: 49%;
+        /* border: 1px solid greenyellow; */
     }
+}
+
+.passport-frame {
+    width: 330px;
+    height: 330px;
+    /* border: 1px solid red ; */
+    padding: 30px;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 5px rgba(1, 1, 56, 0.187);
+    border-radius: 10px;
+}
+
+.passport-frame img {
+    width: 100%;
+    height: 100%;
+}
+
+.laurel-container {
+    display: flex;
+}
+
+.laurel {
+    /* border: 1px solid red; */
+}
+
+.laurel-imgbox {
+    width: 80px;
+
+
+}
+
+.laurel-imgbox img {
+    max-width: 100%;
+    height: auto;
+}
+
+.laurel h6 {
+    margin: 0;
+}
