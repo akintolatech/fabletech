@@ -13,9 +13,20 @@
     <link type="text/css" href="{% static 'styles/cart.css' %}" rel="stylesheet" />
     <link type="x-icon" href="{% static 'img/ft.ico' %}" rel="icon" />
     <script src="{% static 'js/jquery.js' %}"></script>
+    
 </head>
 <body>
+<!-- 
+    <div id="loader" class="loader"></div>
 
+        <div class="spinner">
+           
+        </div>
+    
+    </div> -->
+   
+
+    <!-- Header -->
     <div id="header">
         <div class="wrap">
             
@@ -90,6 +101,8 @@
         </div>
 
     </div>
+
+
     <!-- <div class="back-drop"></div> -->
     <div style="height:70px;"></div>
 
@@ -98,7 +111,9 @@
     <!-- main section -->
     <div id="main">
 
-        {% block content %}{% endblock %}
+        {% block content %}
+            <!-- Children components to use this template goes here -->
+        {% endblock %}
 
     </div>
 
@@ -180,6 +195,9 @@
 
 
     </div>
-
+    
+    
+    
 </body>
+<script src="{% static 'js/utilities.js' %}"></script>
 </html>
