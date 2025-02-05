@@ -25,7 +25,7 @@
                   {{ product.category }}
                 </a>
               </h2>
-              <p class="price"> &#x20A6 {{ product.price }}</p>
+              <p class="price"> &#x20A6 <b class="formatted-price">{{ product.price }}</b></p>
               <form action="{% url 'cart:cart_add' product.id %}" method="post">
                 {{ cart_product_form }}
                 {% csrf_token %}
@@ -33,6 +33,7 @@
               </form>
               <h4>Product Description</h4>
               {{ product.description|linebreaks }}
+
             </div>
 
         </div>
